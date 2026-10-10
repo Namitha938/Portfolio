@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -46,6 +47,9 @@ export default function App() {
 
       {/* Request Resume Modal */}
       <ResumeModal isOpen={isResumeModalOpen} onClose={handleCloseResumeModal} />
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
