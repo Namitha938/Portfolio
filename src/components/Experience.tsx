@@ -16,7 +16,12 @@ export default function Experience() {
         {experienceData.map((exp, idx) => (
           <Reveal key={exp.role} delay={idx * 90} className="relative mb-8">
             {/* Timeline bullet node */}
-            <span className="absolute -left-[26px] top-7 size-3 rounded-full bg-gradient-brand ring-4 ring-background" />
+            <span className="absolute -left-[26px] top-7 flex size-3 items-center justify-center">
+              {idx === 0 && (
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75" />
+              )}
+              <span className="relative inline-flex size-3 rounded-full bg-gradient-brand ring-4 ring-background" />
+            </span>
 
             <div className="glass rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1 hover:border-primary/40">
               <h3 className="font-display text-lg font-semibold text-foreground">{exp.role}</h3>

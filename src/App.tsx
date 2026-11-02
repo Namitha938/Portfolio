@@ -4,6 +4,7 @@ import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Education from './components/Education';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
@@ -35,6 +36,7 @@ export default function App() {
       <main>
         <Hero onRequestResume={handleOpenResumeModal} />
         <About />
+        <Education />
         <Skills />
         <Experience />
         <Projects />
