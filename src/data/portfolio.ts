@@ -77,8 +77,8 @@ export interface ServiceItem {
 export const personalInfo: PersonalInfo = {
   name: 'Namitha',
   lastName: 'Singu',
-  role: 'Computer Science Undergraduate',
-  professionalTitle: 'AI Engineer | Machine Learning Engineer | LLM Systems Developer',
+  role: 'Full Stack Software Developer, AI Engineer',
+  professionalTitle: 'Full Stack Software Developer, AI Engineer',
   tagline:
     'Motivated Computer Science undergraduate with hands-on experience in AI/ML and Full-stack Development. Skilled in Python, MERN Stack, RAG Systems, and REST APIs — passionate about building scalable, intelligent software solutions.',
   email: 'namithaaa444@gmail.com',

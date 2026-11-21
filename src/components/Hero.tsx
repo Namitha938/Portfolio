@@ -7,11 +7,11 @@ interface HeroProps {
   onRequestResume: () => void;
 }
 
-const ROTATING_ROLES = [
-  'AI & Machine Learning Engineer',
-  'LLM & Multi-Agent Systems Developer',
-  'Computer Vision & Deep Learning Specialist',
-  'Full-Stack AI Application Developer',
+const ROTATING_SPECIALIZATIONS = [
+  'Production Web Apps & REST APIs',
+  'LLM & Multi-Agent Workflows',
+  'Computer Vision & PyTorch Models',
+  'MERN Stack & FastAPI Backends',
 ];
 
 export default function Hero({ onRequestResume }: HeroProps) {
@@ -21,7 +21,7 @@ export default function Hero({ onRequestResume }: HeroProps) {
 
   // Typewriter effect
   useEffect(() => {
-    const currentFullText = ROTATING_ROLES[roleIndex];
+    const currentFullText = ROTATING_SPECIALIZATIONS[roleIndex];
     let timeout: ReturnType<typeof setTimeout>;
 
     if (!isDeleting && displayedText === currentFullText) {
@@ -30,10 +30,10 @@ export default function Hero({ onRequestResume }: HeroProps) {
     } else if (isDeleting && displayedText === '') {
       // Switch to next text
       setIsDeleting(false);
-      setRoleIndex((prev) => (prev + 1) % ROTATING_ROLES.length);
+      setRoleIndex((prev) => (prev + 1) % ROTATING_SPECIALIZATIONS.length);
     } else {
       // Typing or deleting
-      const speed = isDeleting ? 30 : 60;
+      const speed = isDeleting ? 25 : 50;
       timeout = setTimeout(() => {
         setDisplayedText(
           currentFullText.substring(0, displayedText.length + (isDeleting ? -1 : 1))
@@ -82,12 +82,16 @@ export default function Hero({ onRequestResume }: HeroProps) {
                 <span className="text-gradient block sm:inline">{personalInfo.lastName}</span>
               </h1>
 
-              {/* Dynamic Animated Typing Role */}
-              <div className="h-8 sm:h-9 flex items-center justify-center lg:justify-start">
-                <p className="font-display text-xl font-medium text-primary sm:text-2xl">
-                  {displayedText}
-                  <span className="inline-block w-[2px] h-5 sm:h-6 ml-1 bg-accent animate-pulse align-middle" />
-                </p>
+              {/* Main Headline */}
+              <p className="font-display text-xl font-semibold text-primary sm:text-2xl tracking-tight">
+                {personalInfo.professionalTitle}
+              </p>
+
+              {/* Dynamic Animated Typing Specialization */}
+              <div className="h-7 flex items-center justify-center lg:justify-start text-xs sm:text-sm text-muted-foreground font-medium">
+                <span>Specializing in&nbsp;</span>
+                <span className="text-foreground font-semibold">{displayedText}</span>
+                <span className="inline-block w-[2px] h-3.5 sm:h-4 ml-1 bg-accent animate-pulse align-middle" />
               </div>
             </div>
 
