@@ -4,11 +4,12 @@ import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Education from './components/Education';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import Services from './components/Services';
+import Education from './components/Education';
+import Certifications from './components/Certifications';
+import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ResumeModal from './components/ResumeModal';
@@ -25,29 +26,47 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground">
+    <div className="min-h-screen bg-background font-sans text-foreground selection:bg-primary/30 selection:text-white">
       {/* Top Reading/Scroll Progress */}
       <ScrollProgress />
 
-      {/* Main Navigation */}
-      <Navbar onRequestResume={handleOpenResumeModal} />
+      {/* Main Navigation with Animated Slider */}
+      <Navbar />
 
-      {/* Page Sections */}
+      {/* 9 Professional Sections in Strict Sequence */}
       <main>
-        <Hero onRequestResume={handleOpenResumeModal} />
+        {/* 1. Home */}
+        <Hero />
+
+        {/* 2. About Me */}
         <About />
-        <Education />
+
+        {/* 3. Technical Skills */}
         <Skills />
+
+        {/* 4. Experience (Strictly 3 Internships: Infosys Pragati, Infosys Springboard, Internz Learn) */}
         <Experience />
+
+        {/* 5. Projects (Prioritized 5 Projects + 9-Point Deep Dive Modal) */}
         <Projects />
-        <Services />
+
+        {/* 6. Education (B.Tech AI & ML at SBIT Khammam, 8.4/10 CGPA) */}
+        <Education />
+
+        {/* 7. Certifications (GenAI Powered Data Analytics - Forage) */}
+        <Certifications />
+
+        {/* 8. Achievements (Academic excellence, internships, multi-agent milestones) */}
+        <Achievements />
+
+        {/* 9. Contact (Let's Connect + Direct Channels + Working Form) */}
         <Contact onRequestResume={handleOpenResumeModal} />
       </main>
 
       {/* Footer */}
       <Footer />
 
-      {/* Request Resume Modal */}
+      {/* Request Resume Modal (Optional Email Delivery) */}
       <ResumeModal isOpen={isResumeModalOpen} onClose={handleCloseResumeModal} />
 
       {/* Vercel Web Analytics */}
@@ -55,4 +74,3 @@ export default function App() {
     </div>
   );
 }
-

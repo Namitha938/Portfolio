@@ -1,0 +1,601 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
+endobj
+4 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+5 0 obj
+<< /Length 9803 >>
+stream
+BT
+/F2 20 Tf
+0.080 0.160 0.350 rg
+45.00 800.00 Td
+(NAMITHA SINGU) Tj
+ET
+BT
+/F2 11 Tf
+0.150 0.420 0.720 rg
+45.00 784.00 Td
+(Full-Stack Software Developer | AI Engineer) Tj
+ET
+BT
+/F1 8.5 Tf
+0.350 0.380 0.450 rg
+45.00 770.00 Td
+(Hyderabad, India | namithaaa444@gmail.com | linkedin.com/in/namitha-singu-3b0515291 | github.com/Namitha938) Tj
+ET
+1.20 w
+0.150 0.420 0.720 RG
+45.00 760.00 m
+550.28 760.00 l
+S
+0.940 0.960 0.990 rg
+45.00 741.00 505.28 16.00 re
+f
+BT
+/F2 9.5 Tf
+0.100 0.300 0.600 rg
+51.00 745.00 Td
+(PROFESSIONAL SUMMARY) Tj
+ET
+0.50 w
+0.800 0.850 0.920 RG
+45.00 741.00 m
+550.28 741.00 l
+S
+BT
+/F1 8.8 Tf
+0.200 0.220 0.260 rg
+49.00 728.00 Td
+(Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning with hands-on engineering) Tj
+ET
+BT
+/F1 8.8 Tf
+0.200 0.220 0.260 rg
+49.00 716.50 Td
+(experience in AI/ML, multi-agent LLM systems, computer vision, and full-stack software development. Proficient in Python,) Tj
+ET
+BT
+/F1 8.8 Tf
+0.200 0.220 0.260 rg
+49.00 705.00 Td
+(MERN Stack, RAG architectures, FastAPI/Django, and modern AI frameworks to build scalable, intelligent applications.) Tj
+ET
+0.940 0.960 0.990 rg
+45.00 686.50 505.28 16.00 re
+f
+BT
+/F2 9.5 Tf
+0.100 0.300 0.600 rg
+51.00 690.50 Td
+(PROFESSIONAL EXPERIENCE) Tj
+ET
+0.50 w
+0.800 0.850 0.920 RG
+45.00 686.50 m
+550.28 686.50 l
+S
+BT
+/F2 9.5 Tf
+0.100 0.120 0.150 rg
+49.00 673.50 Td
+(AI Intern  Cloud Infrastructure for AI/ML) Tj
+ET
+BT
+/F3 8.5 Tf
+0.400 0.420 0.480 rg
+440.28 673.50 Td
+(March 2026  May 2026) Tj
+ET
+BT
+/F2 8.8 Tf
+0.150 0.420 0.720 rg
+49.00 662.50 Td
+(Infosys  Pragati: Path to Future) Tj
+ET
+BT
+/F1 8.5 Tf
+0.400 0.420 0.480 rg
+500.28 662.50 Td
+(Remote) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 651.50 Td
+(") Tj
+ET
+BT
+/F1 8.5 Tf
+0.220 0.250 0.300 rg
+65.00 651.50 Td
+(Evaluated Azure IaaS, PaaS, and SaaS infrastructure for AI/ML workloads across 10+ deployment architectures.) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 640.50 Td
+(") Tj
+ET
+BT
+/F1 8.5 Tf
+0.220 0.250 0.300 rg
+65.00 640.50 Td
+(Benchmarked compute, GPU, and storage configurations to optimize resource allocation and execution efficiency by 25%.) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 629.50 Td
+(") Tj
+ET
+BT
+/F1 8.5 Tf
+0.220 0.250 0.300 rg
+65.00 629.50 Td
+(Containerized AI/ML workflows using Docker and Python under enterprise engineering standards.) Tj
+ET
+BT
+/F3 8 Tf
+0.400 0.420 0.480 rg
+65.00 618.50 Td
+(Technologies: Azure, Docker, Python, Object-Oriented Programming) Tj
+ET
+BT
+/F2 9.5 Tf
+0.100 0.120 0.150 rg
+49.00 604.50 Td
+(AI Intern  LLM Systems & Agent Engineering) Tj
+ET
+BT
+/F3 8.5 Tf
+0.400 0.420 0.480 rg
+440.28 604.50 Td
+(February 2026  April 2026) Tj
+ET
+BT
+/F2 8.8 Tf
+0.150 0.420 0.720 rg
+49.00 593.50 Td
+(Infosys Springboard) Tj
+ET
+BT
+/F1 8.5 Tf
+0.400 0.420 0.480 rg
+500.28 593.50 Td
+(Remote) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 582.50 Td
+(") Tj
+ET
+BT
+/F1 8.5 Tf
+0.220 0.250 0.300 rg
+65.00 582.50 Td
+(Engineered an 8-step multi-agent research pipeline using LangGraph and Groq AI with 100% delegation success.) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 571.50 Td
+(") Tj
+ET
+BT
+/F1 8.5 Tf
+0.220 0.250 0.300 rg
+65.00 571.50 Td
+(Implemented stateful agent delegation, supervisor routing, and workflow orchestration across 5 domains.) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 560.50 Td
+(") Tj
+ET
+BT
+/F1 8.5 Tf
+0.220 0.250 0.300 rg
+65.00 560.50 Td
+(Integrated LangSmith for end-to-end observability, latency tracing, and token monitoring.) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 549.50 Td
+(") Tj
+ET
+BT
+/F1 8.5 Tf
+0.220 0.250 0.300 rg
+65.00 549.50 Td
+(Deployed production-grade FastAPI REST backend on Hugging Face Spaces with robust error handling.) Tj
+ET
+BT
+/F3 8 Tf
+0.400 0.420 0.480 rg
+65.00 538.50 Td
+(Technologies: LangGraph, Groq AI, FastAPI, LangSmith, Python, Hugging Face) Tj
+ET
+BT
+/F2 9.5 Tf
+0.100 0.120 0.150 rg
+49.00 524.50 Td
+(AI & ML Intern) Tj
+ET
+BT
+/F3 8.5 Tf
+0.400 0.420 0.480 rg
+420.28 524.50 Td
+(October 2025  December 2025) Tj
+ET
+BT
+/F2 8.8 Tf
+0.150 0.420 0.720 rg
+49.00 513.50 Td
+(Internz Learn) Tj
+ET
+BT
+/F1 8.5 Tf
+0.400 0.420 0.480 rg
+500.28 513.50 Td
+(Remote) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 502.50 Td
+(") Tj
+ET
+BT
+/F1 8.5 Tf
+0.220 0.250 0.300 rg
+65.00 502.50 Td
+(Built an AI resume screening engine \(Python, Groq AI, LLaMA 3\) with NLP-based skill extraction and candidate scoring.) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 491.50 Td
+(") Tj
+ET
+BT
+/F1 8.5 Tf
+0.220 0.250 0.300 rg
+65.00 491.50 Td
+(Improved AI match accuracy by 40% through structured JSON schemas and few-shot prompt engineering.) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 480.50 Td
+(") Tj
+ET
+BT
+/F1 8.5 Tf
+0.220 0.250 0.300 rg
+65.00 480.50 Td
+(Deployed via FastAPI on Hugging Face Spaces with LangSmith observability.) Tj
+ET
+BT
+/F3 8 Tf
+0.400 0.420 0.480 rg
+65.00 469.50 Td
+(Technologies: Python, Groq AI, LLaMA 3, FastAPI, LangSmith) Tj
+ET
+0.940 0.960 0.990 rg
+45.00 452.50 505.28 16.00 re
+f
+BT
+/F2 9.5 Tf
+0.100 0.300 0.600 rg
+51.00 456.50 Td
+(FEATURED ENGINEERING PROJECTS) Tj
+ET
+0.50 w
+0.800 0.850 0.920 RG
+45.00 452.50 m
+550.28 452.50 l
+S
+BT
+/F2 9 Tf
+0.100 0.120 0.150 rg
+49.00 439.50 Td
+(Autonomous Cognitive Engine) Tj
+ET
+BT
+/F3 7.8 Tf
+0.300 0.400 0.550 rg
+260.00 439.50 Td
+([LangGraph, Groq AI, FastAPI, LangSmith, Hugging Face]) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 429.00 Td
+(") Tj
+ET
+BT
+/F1 8.2 Tf
+0.220 0.250 0.300 rg
+65.00 429.00 Td
+(Autonomous multi-agent research framework for deep research and long-horizon task execution.) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 419.00 Td
+(") Tj
+ET
+BT
+/F1 8.2 Tf
+0.220 0.250 0.300 rg
+65.00 419.00 Td
+(Features multi-agent orchestration, dynamic task decomposition, supervisor delegation, and full observability.) Tj
+ET
+BT
+/F2 9 Tf
+0.100 0.120 0.150 rg
+49.00 406.00 Td
+(TruthLens  AI Misinformation Detector) Tj
+ET
+BT
+/F3 7.8 Tf
+0.300 0.400 0.550 rg
+260.00 406.00 Td
+([Hugging Face Transformers, SHAP, Streamlit, Hugging Face]) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 395.50 Td
+(") Tj
+ET
+BT
+/F1 8.2 Tf
+0.220 0.250 0.300 rg
+65.00 395.50 Td
+(Real-time claim analysis pipeline assessing credibility dimensions in under 3 seconds with explainable AI \(SHAP\).) Tj
+ET
+BT
+/F2 9 Tf
+0.100 0.120 0.150 rg
+49.00 382.50 Td
+(AI Resume Screening Engine) Tj
+ET
+BT
+/F3 7.8 Tf
+0.300 0.400 0.550 rg
+260.00 382.50 Td
+([Python, Groq AI, LLaMA 3, Prompt Engineering, FastAPI]) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 372.00 Td
+(") Tj
+ET
+BT
+/F1 8.2 Tf
+0.220 0.250 0.300 rg
+65.00 372.00 Td
+(Automated batch candidate ranking, NLP skill extraction, and structured match scoring for HR workflow automation.) Tj
+ET
+BT
+/F2 9 Tf
+0.100 0.120 0.150 rg
+49.00 359.00 Td
+(CropGuard AI  Crop Disease Detection & RAG Advisory) Tj
+ET
+BT
+/F3 7.8 Tf
+0.300 0.400 0.550 rg
+260.00 359.00 Td
+([PyTorch, ResNet18, LangChain, FAISS, Sentence Transformers, Streamlit]) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 348.50 Td
+(") Tj
+ET
+BT
+/F1 8.2 Tf
+0.220 0.250 0.300 rg
+65.00 348.50 Td
+(CNN pipeline \(ResNet18\) on 54k PlantVillage images \(95% accuracy\) paired with FAISS RAG for agricultural advisory.) Tj
+ET
+BT
+/F2 9 Tf
+0.100 0.120 0.150 rg
+49.00 335.50 Td
+(Emotion-Based Music Recommendation System) Tj
+ET
+BT
+/F3 7.8 Tf
+0.300 0.400 0.550 rg
+260.00 335.50 Td
+([Django, OpenCV, DeepFace, TensorFlow, Spotify API]) Tj
+ET
+BT
+/F1 9 Tf
+0.150 0.420 0.720 rg
+55.00 325.00 Td
+(") Tj
+ET
+BT
+/F1 8.2 Tf
+0.220 0.250 0.300 rg
+65.00 325.00 Td
+(Webcam real-time emotion recognition pipeline \(OpenCV/DeepFace\) linked to Spotify Web API for instant playlists.) Tj
+ET
+0.940 0.960 0.990 rg
+45.00 309.00 505.28 16.00 re
+f
+BT
+/F2 9.5 Tf
+0.100 0.300 0.600 rg
+51.00 313.00 Td
+(TECHNICAL SKILLS) Tj
+ET
+0.50 w
+0.800 0.850 0.920 RG
+45.00 309.00 m
+550.28 309.00 l
+S
+BT
+/F2 8.2 Tf
+0.150 0.420 0.720 rg
+49.00 296.00 Td
+(Programming Languages:) Tj
+ET
+BT
+/F1 8.2 Tf
+0.200 0.220 0.260 rg
+185.00 296.00 Td
+(Python, JavaScript, HTML, CSS, Java, SQL) Tj
+ET
+BT
+/F2 8.2 Tf
+0.150 0.420 0.720 rg
+49.00 285.50 Td
+(Frontend:) Tj
+ET
+BT
+/F1 8.2 Tf
+0.200 0.220 0.260 rg
+185.00 285.50 Td
+(React.js, HTML5, CSS3, JavaScript, Tailwind CSS) Tj
+ET
+BT
+/F2 8.2 Tf
+0.150 0.420 0.720 rg
+49.00 275.00 Td
+(Backend:) Tj
+ET
+BT
+/F1 8.2 Tf
+0.200 0.220 0.260 rg
+185.00 275.00 Td
+(FastAPI, Django, Flask, REST API Development) Tj
+ET
+BT
+/F2 8.2 Tf
+0.150 0.420 0.720 rg
+49.00 264.50 Td
+(AI & Machine Learning:) Tj
+ET
+BT
+/F1 8.2 Tf
+0.200 0.220 0.260 rg
+185.00 264.50 Td
+(Machine Learning, Deep Learning, NLP, Computer Vision, Generative AI, LLMs) Tj
+ET
+BT
+/F2 8.2 Tf
+0.150 0.420 0.720 rg
+49.00 254.00 Td
+(AI Frameworks & Libraries:) Tj
+ET
+BT
+/F1 8.2 Tf
+0.200 0.220 0.260 rg
+185.00 254.00 Td
+(LangGraph, LangChain, PyTorch, TensorFlow, Hugging Face, SHAP, DeepFace, OpenCV, FAISS, Groq) Tj
+ET
+BT
+/F2 8.2 Tf
+0.150 0.420 0.720 rg
+49.00 243.50 Td
+(Databases & Cloud:) Tj
+ET
+BT
+/F1 8.2 Tf
+0.200 0.220 0.260 rg
+185.00 243.50 Td
+(MySQL, SQLite3, MongoDB | Microsoft Azure, Docker, Git, GitHub, Hugging Face Spaces) Tj
+ET
+BT
+/F2 8.2 Tf
+0.150 0.420 0.720 rg
+49.00 233.00 Td
+(Analytics & Tools:) Tj
+ET
+BT
+/F1 8.2 Tf
+0.200 0.220 0.260 rg
+185.00 233.00 Td
+(Streamlit, Power BI, Tableau, Excel, Postman, LangSmith) Tj
+ET
+0.940 0.960 0.990 rg
+45.00 215.50 505.28 16.00 re
+f
+BT
+/F2 9.5 Tf
+0.100 0.300 0.600 rg
+51.00 219.50 Td
+(EDUCATION & CERTIFICATIONS) Tj
+ET
+0.50 w
+0.800 0.850 0.920 RG
+45.00 215.50 m
+550.28 215.50 l
+S
+BT
+/F2 9 Tf
+0.100 0.120 0.150 rg
+49.00 202.50 Td
+(Bachelor of Technology \(B.Tech\) in Artificial Intelligence & Machine Learning) Tj
+ET
+BT
+/F3 8.5 Tf
+0.400 0.420 0.480 rg
+450.28 202.50 Td
+(Aug 2023  May 2027) Tj
+ET
+BT
+/F1 8.5 Tf
+0.250 0.280 0.350 rg
+49.00 191.50 Td
+(Swarna Bharathi Institute of Science and Technology, Khammam, India | CGPA: 8.4 / 10) Tj
+ET
+BT
+/F2 8.8 Tf
+0.150 0.420 0.720 rg
+49.00 178.50 Td
+(Certification: GenAI Powered Data Analytics  Forage \(February 2026\)) Tj
+ET
+
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Type /Catalog /Pages 4 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000000154 00000 n 
+0000000232 00000 n 
+0000000289 00000 n 
+0000010144 00000 n 
+0000010296 00000 n 
+trailer
+<< /Size 8 /Root 7 0 R >>
+startxref
+10345
+%%EOF

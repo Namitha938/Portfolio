@@ -1,12 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { FileText, Menu, X } from 'lucide-react';
+import { Download, Menu, X } from 'lucide-react';
 import { navItems, personalInfo } from '../data/portfolio';
 
-interface NavbarProps {
-  onRequestResume: () => void;
-}
-
-export default function Navbar({ onRequestResume }: NavbarProps) {
+export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,22 +58,22 @@ export default function Navbar({ onRequestResume }: NavbarProps) {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/80 backdrop-blur-xl border-b border-border/80 shadow-card py-3'
+          ? 'bg-background/85 backdrop-blur-xl border-b border-border/80 shadow-card py-2.5'
           : 'bg-transparent border-b border-transparent py-4'
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Brand Logo */}
         <a
           href="#home"
           onClick={() => handleNavClick('home')}
-          className="font-display text-lg font-bold tracking-tight transition-transform hover:scale-105 shrink-0"
+          className="font-display text-base sm:text-lg font-bold tracking-tight transition-transform hover:scale-105 shrink-0"
         >
           {personalInfo.name} <span className="text-gradient">{personalInfo.lastName}</span>
         </a>
 
         {/* Desktop Animated Segmented Pill Slider Bar */}
-        <div className="hidden lg:flex items-center">
+        <div className="hidden xl:flex items-center">
           <div className="relative rounded-full border border-border/70 bg-secondary/35 p-1 backdrop-blur-md shadow-inner">
             {/* The Animated Sliding Pill Indicator */}
             <span
@@ -100,7 +96,7 @@ export default function Navbar({ onRequestResume }: NavbarProps) {
                       ref={(el) => (navLinksRef.current[item.id] = el)}
                       href={`#${item.id}`}
                       onClick={() => handleNavClick(item.id)}
-                      className={`relative z-10 block rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors duration-200 cursor-pointer ${
+                      className={`relative z-10 block rounded-full px-3 py-1.5 text-xs font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap ${
                         isActive
                           ? 'text-primary-foreground font-semibold'
                           : 'text-muted-foreground hover:text-foreground'
@@ -115,22 +111,39 @@ export default function Navbar({ onRequestResume }: NavbarProps) {
           </div>
         </div>
 
+        {/* Medium Screen Compact Menu */}
+        <div className="hidden md:flex xl:hidden items-center gap-1">
+          {navItems.slice(0, 5).map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={() => handleNavClick(item.id)}
+              className={`rounded-full px-2.5 py-1 text-xs font-medium transition-colors ${
+                activeSection === item.id ? 'text-primary font-semibold' : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+
         {/* CTA & Mobile Menu Toggle */}
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={onRequestResume}
-            className="btn-shimmer hidden items-center gap-2 rounded-full bg-gradient-brand p-[1px] sm:inline-flex transition-transform hover:scale-105 active:scale-95 cursor-pointer shadow-sm"
+          {/* Direct Resume Download Button */}
+          <a
+            href={personalInfo.resumeUrl}
+            download="Namitha_Singu_Resume.pdf"
+            className="btn-shimmer hidden items-center gap-1.5 rounded-full bg-gradient-brand p-[1px] sm:inline-flex transition-transform hover:scale-105 active:scale-95 cursor-pointer shadow-sm"
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-xs font-semibold text-foreground">
-              <FileText className="size-3.5 text-primary" /> Request Resume
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-background px-3.5 py-1.5 text-xs font-semibold text-foreground">
+              <Download className="size-3.5 text-primary" /> Resume
             </span>
-          </button>
+          </a>
 
           <button
             aria-label="Toggle menu"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="rounded-full border border-border p-2 lg:hidden text-foreground hover:bg-secondary/40 transition-colors cursor-pointer"
+            className="rounded-full border border-border p-2 xl:hidden text-foreground hover:bg-secondary/40 transition-colors cursor-pointer"
           >
             {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -139,7 +152,7 @@ export default function Navbar({ onRequestResume }: NavbarProps) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="glass mx-4 mt-3 rounded-2xl p-4 lg:hidden animate-in fade-in slide-in-from-top-2 duration-200 border border-border">
+        <div className="glass mx-4 mt-3 rounded-2xl p-4 xl:hidden animate-in fade-in slide-in-from-top-2 duration-200 border border-border">
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
@@ -148,7 +161,7 @@ export default function Navbar({ onRequestResume }: NavbarProps) {
                   <a
                     href={`#${item.id}`}
                     onClick={() => handleNavClick(item.id)}
-                    className={`block rounded-xl px-4 py-2.5 text-sm transition-all ${
+                    className={`block rounded-xl px-4 py-2 text-sm transition-all ${
                       isActive
                         ? 'bg-gradient-brand text-primary-foreground font-semibold shadow-glow'
                         : 'text-muted-foreground hover:bg-secondary/40 hover:text-foreground'
@@ -160,18 +173,16 @@ export default function Navbar({ onRequestResume }: NavbarProps) {
               );
             })}
             <li className="pt-2 border-t border-border/60 mt-1">
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onRequestResume();
-                }}
+              <a
+                href={personalInfo.resumeUrl}
+                download="Namitha_Singu_Resume.pdf"
+                onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 rounded-xl bg-gradient-brand p-[1px] w-full cursor-pointer"
               >
                 <span className="flex items-center justify-center gap-2 rounded-xl bg-background px-4 py-2.5 text-sm font-semibold w-full">
-                  <FileText className="size-4 text-primary" /> Request Resume
+                  <Download className="size-4 text-primary" /> Download Resume (PDF)
                 </span>
-              </button>
+              </a>
             </li>
           </ul>
         </div>

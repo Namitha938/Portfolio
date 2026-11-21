@@ -5,14 +5,16 @@ import projResumeImg from '../assets/proj-resume.jpg';
 import projEmotionImg from '../assets/proj-emotion.jpg';
 import projCropguardImg from '../assets/proj-cropguard.jpg';
 import projLearningImg from '../assets/proj-learning.jpg';
-import projWeedImg from '../assets/proj-weed.jpg';
 
 export interface PersonalInfo {
   name: string;
   lastName: string;
   role: string;
   professionalTitle: string;
+  specialization: string;
   tagline: string;
+  introduction: string;
+  careerInterests: string[];
   email: string;
   location: string;
   avatar: string;
@@ -35,29 +37,56 @@ export interface EducationItem {
   location: string;
   period: string;
   cgpa: string;
+  coursework: string[];
 }
 
 export interface CertificationItem {
   title: string;
   issuer: string;
   date: string;
+  verificationUrl?: string;
+  description: string;
+  skills: string[];
+}
+
+export interface AchievementItem {
+  title: string;
+  category: string;
+  metric: string;
+  description: string;
+  date: string;
 }
 
 export interface SkillCategory {
   name: string;
+  iconName: string;
   items: string[];
 }
 
 export interface ExperienceItem {
   role: string;
   company: string;
+  program?: string;
   dates: string;
   location: string;
-  bullets: string[];
+  responsibilities: string[];
   tech: string[];
 }
 
+export interface ProjectDetail {
+  problemStatement: string;
+  solution: string;
+  myContribution: string;
+  architecture: string;
+  technologyStack: string[];
+  keyFeatures: string[];
+  screenshots: string[];
+  githubUrl: string;
+  liveDemoUrl?: string;
+}
+
 export interface ProjectItem {
+  id: string;
   title: string;
   period: string;
   description: string;
@@ -66,165 +95,174 @@ export interface ProjectItem {
   link: string;
   liveDemoUrl?: string;
   image: string;
-}
-
-export interface ServiceItem {
-  title: string;
-  body: string;
-  icon: 'Workflow' | 'Brain' | 'Eye' | 'Server' | 'Layers' | 'BarChart3';
+  highlights: string[];
+  details: ProjectDetail;
 }
 
 export const personalInfo: PersonalInfo = {
   name: 'Namitha',
   lastName: 'Singu',
-  role: 'Full Stack Software Developer, AI Engineer',
-  professionalTitle: 'Full Stack Software Developer, AI Engineer',
+  role: 'Full-Stack Software Developer | AI Engineer',
+  professionalTitle: 'Full-Stack Software Developer | AI Engineer',
+  specialization:
+    'Specializing in Generative AI, LLM & Multi-Agent Systems, Computer Vision, and Enterprise AI Delivery.',
   tagline:
-    'Motivated Computer Science undergraduate with hands-on experience in AI/ML and Full-stack Development. Skilled in Python, MERN Stack, RAG Systems, and REST APIs — passionate about building scalable, intelligent software solutions.',
+    'Building AI-powered applications, intelligent systems, and scalable web solutions.',
+  introduction:
+    'I am a Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning, with hands-on experience in AI/ML and full-stack development. I work with Python, MERN Stack, RAG systems, REST APIs, and modern AI frameworks to build scalable and intelligent software solutions. I am passionate about developing AI-powered applications, intelligent systems, and practical software solutions that solve real-world problems.',
+  careerInterests: [
+    'AI Engineer',
+    'Generative AI Developer',
+    'Full-Stack Software Developer',
+    'Python Developer',
+    'Associate Software Engineer',
+  ],
   email: 'namithaaa444@gmail.com',
   location: 'Hyderabad, India',
   avatar: namithaImg,
   githubUrl: 'https://github.com/Namitha938',
   linkedinUrl: 'https://linkedin.com/in/namitha-singu-3b0515291',
   calendlyUrl: 'https://calendly.com/namithasingu',
-  resumeUrl: '#contact', // Fallback or direct resume download path
+  resumeUrl: '/Namitha_Singu_Resume.pdf',
 };
 
 export const aboutContent = {
-  heading: 'Delivery-focused AI engineer',
+  heading: 'Engineering with Intelligence & Purpose',
   paragraphs: [
-    "I'm a Computer Science undergraduate passionate about building production-ready intelligent systems. My focus spans LLM applications, RAG architectures, computer vision, and full-stack development — technology that doesn't just process data, but reasons about it. From RAG-powered assistants with semantic search and human-in-the-loop escalation, to CNN-based crop and disease detection pipelines, to full-stack web portals with secure authentication, I care deeply about making software that works in the real world.",
+    'I am a Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning, with a strong interest in software engineering and intelligent application development.',
+    'I have hands-on experience building AI-powered applications, LLM-based systems, multi-agent workflows, natural language processing solutions, computer vision applications, and full-stack web applications.',
+    'My technical interests include Generative AI, Machine Learning, RAG systems, backend development, and scalable software architecture.',
+    'I enjoy transforming ideas into functional applications, exploring emerging technologies, and continuously improving my engineering and problem-solving skills.',
+    'My goal is to contribute to innovative engineering teams and build impactful software and AI solutions.',
+  ],
+  careerInterests: [
+    'AI Engineer',
+    'Generative AI Developer',
+    'Full-Stack Software Developer',
+    'Python Developer',
+    'Associate Software Engineer',
   ],
   stats: [
-    { value: 3, suffix: '', label: 'Internships' },
-    { value: 7, suffix: '', label: 'Production Apps' },
-    { value: 8.4, suffix: '', label: 'CGPA' },
-    { value: 1, suffix: '', label: 'Certification' },
+    { value: 8.4, suffix: '/10', label: 'B.Tech CGPA' },
+    { value: 3, suffix: '', label: 'AI Internships' },
+    { value: 7, suffix: '+', label: 'Production Apps' },
+    { value: 1, suffix: '', label: 'Professional Cert' },
   ] as StatItem[],
 };
 
-export const educationData: EducationItem = {
-  degree: 'B.Tech',
-  field: 'Artificial Intelligence & Machine Learning',
-  institution: 'Swarna Bharathi Institute of Science and Technology',
-  location: 'Khammam, India',
-  period: 'Aug 2023 – May 2027',
-  cgpa: '8.4/10',
-};
-
-export const certificationsData: CertificationItem[] = [
-  {
-    title: 'GenAI Powered Data Analytics',
-    issuer: 'Forage',
-    date: 'Feb 2026',
-  },
-];
-
 export const skillsCategories: SkillCategory[] = [
   {
-    name: 'Programming',
-    items: ['Python', 'Java', 'SQL', 'HTML/CSS/JS'],
+    name: 'Programming Languages',
+    iconName: 'Code',
+    items: ['Python', 'JavaScript', 'HTML', 'CSS', 'Java', 'SQL'],
   },
   {
-    name: 'AI/ML Frameworks',
+    name: 'Frontend',
+    iconName: 'Layout',
+    items: ['React.js', 'HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS'],
+  },
+  {
+    name: 'Backend',
+    iconName: 'Server',
+    items: ['FastAPI', 'Django', 'Flask', 'REST API Development'],
+  },
+  {
+    name: 'AI & Machine Learning',
+    iconName: 'Brain',
     items: [
+      'Machine Learning',
+      'Deep Learning',
+      'Natural Language Processing',
+      'Computer Vision',
+      'Generative AI',
+      'Large Language Models',
+    ],
+  },
+  {
+    name: 'AI Frameworks & Libraries',
+    iconName: 'Cpu',
+    items: [
+      'LangGraph',
+      'LangChain',
+      'Hugging Face Transformers',
       'PyTorch',
       'TensorFlow',
       'Keras',
       'Scikit-learn',
-      'HuggingFace Transformers',
       'SHAP',
       'DeepFace',
       'OpenCV',
-      'YOLOv5',
       'NLTK',
-      'Pandas',
-      'NumPy',
-    ],
-  },
-  {
-    name: 'LLM & Agents',
-    items: [
-      'LangGraph',
-      'LangChain',
       'FAISS',
+      'Sentence Transformers',
       'Groq AI',
       'LLaMA 3',
-      'Sentence Transformers',
-      'LangSmith',
-      'Gemini API',
-      'Prompt Engineering',
-    ],
-  },
-  {
-    name: 'Backend & Web',
-    items: [
-      'Django',
-      'FastAPI',
-      'Flask',
-      'REST API design',
-      'MERN stack',
-      'Streamlit',
-      'HTML/CSS/JS',
     ],
   },
   {
     name: 'Databases',
+    iconName: 'Database',
     items: ['MySQL', 'SQLite3', 'MongoDB'],
   },
   {
-    name: 'Cloud & DevOps',
-    items: ['Microsoft Azure', 'Hugging Face Spaces', 'Docker', 'Git/GitHub'],
-  },
-  {
-    name: 'Analytics',
-    items: ['Power BI', 'Tableau', 'Excel'],
-  },
-  {
-    name: 'Soft Skills',
+    name: 'Tools & Platforms',
+    iconName: 'Wrench',
     items: [
-      'Analytical thinking',
-      'Structured troubleshooting',
-      'Rapid prototyping',
-      'Communication',
-      'Adaptability',
-      'Self-directed learning',
+      'Microsoft Azure',
+      'Docker',
+      'Git',
+      'GitHub',
+      'Hugging Face Spaces',
+      'Streamlit',
+      'Power BI',
+      'Tableau',
+      'Excel',
+      'Postman',
+      'LangSmith',
     ],
   },
 ];
 
 export const experienceData: ExperienceItem[] = [
   {
-    role: 'AI Intern — LLM Systems & Agent Engineering',
-    company: 'Infosys Springboard',
-    dates: 'Feb 2026 – Apr 2026',
+    role: 'AI Intern – Cloud Infrastructure for AI/ML',
+    company: 'Infosys',
+    program: 'Pragati: Path to Future',
+    dates: 'March 2026 – May 2026',
     location: 'Remote',
-    bullets: [
-      'Engineered an 8-step multi-agent pipeline using LangGraph and Groq AI, achieving 100% delegation success with LangSmith observability.',
-      'Deployed a production-grade FastAPI REST backend on Hugging Face Spaces meeting enterprise delivery standards.',
+    responsibilities: [
+      'Evaluated Azure IaaS, PaaS, and SaaS infrastructure for AI/ML workloads across 10+ deployment environments.',
+      'Benchmarked compute and storage configurations to optimize resource allocation and execution efficiency by 25%.',
+      'Worked on resource allocation, execution efficiency, and containerized deployment workflows.',
+      'Gained hands-on experience with enterprise cloud computing, Docker virtualization, and Python engineering.',
     ],
-    tech: ['LangGraph', 'Groq AI', 'FastAPI', 'OOP'],
+    tech: ['Azure', 'Docker', 'Python', 'Object-Oriented Programming'],
   },
   {
-    role: 'AI Intern — Cloud Infrastructure for AI/ML',
-    company: 'Infosys (Pragati: Path to Future)',
-    dates: 'Mar 2026 – May 2026',
+    role: 'AI Intern – LLM Systems & Agent Engineering',
+    company: 'Infosys Springboard',
+    dates: 'February 2026 – April 2026',
     location: 'Remote',
-    bullets: [
-      'Evaluated Azure IaaS/PaaS/SaaS infrastructure across 10+ deployments, boosting execution efficiency by 25% and earning top program scores.',
+    responsibilities: [
+      'Engineered an 8-step multi-agent pipeline using LangGraph and Groq AI with 100% delegation success across 5 domains.',
+      'Implemented stateful agent delegation, supervisor routing, and autonomous workflow orchestration.',
+      'Integrated LangSmith for comprehensive LLM observability, latency tracing, and token monitoring.',
+      'Deployed a production-grade FastAPI REST backend on Hugging Face Spaces adhering to enterprise standards.',
     ],
-    tech: ['Cloud Computing', 'Docker', 'Python', 'OOP'],
+    tech: ['LangGraph', 'Groq AI', 'FastAPI', 'LangSmith', 'Python'],
   },
   {
     role: 'AI & ML Intern',
     company: 'Internz Learn',
-    dates: 'Oct 2025 – Dec 2025',
+    dates: 'October 2025 – December 2025',
     location: 'Remote',
-    bullets: [
-      'Built a client-deployable AI resume screening app (Python + Groq AI + LLaMA 3) with NLP skill-extraction logic improving AI response accuracy by 40%.',
-      'Deployed via FastAPI on Hugging Face Spaces with LangSmith tracing.',
+    responsibilities: [
+      'Built an AI resume screening application using Python, Groq AI, and LLaMA 3 for automated candidate evaluation.',
+      'Developed NLP-based skill extraction and candidate ranking functionality with structured output schemas.',
+      'Deployed the application using FastAPI on Hugging Face Spaces for real-time inference under 2 seconds.',
+      'Integrated LangSmith tracing for performance observability and prompt accuracy tuning.',
     ],
-    tech: ['Python', 'Groq AI', 'LLaMA 3', 'OOP'],
+    tech: ['Python', 'Groq AI', 'LLaMA 3', 'FastAPI', 'LangSmith'],
   },
 ];
 
@@ -232,125 +270,303 @@ export const projectCategories = ['All', 'LLM/Agents', 'Computer Vision', 'Full-
 
 export const projectsData: ProjectItem[] = [
   {
+    id: 'cognitive-engine',
     title: 'Autonomous Cognitive Engine',
     period: 'Feb 2026 – Apr 2026',
     description:
-      '8-step multi-agent research framework with 100% delegation success across 5 domains, 14/14 milestones hit. Deployed via FastAPI on Hugging Face Spaces with full LangSmith observability.',
+      'An autonomous AI research system designed for deep research and long-horizon task execution using multi-agent orchestration.',
     tech: ['LangGraph', 'Groq AI', 'FastAPI', 'LangSmith', 'Hugging Face'],
     category: 'LLM/Agents',
     link: 'https://github.com/Namitha938',
     image: projCognitiveImg,
+    highlights: [
+      'Multi-agent workflow',
+      'Task planning',
+      'Agent delegation',
+      'Research automation',
+      'Observability and tracing',
+    ],
+    details: {
+      problemStatement:
+        'Complex multi-step research queries require multi-source synthesis, task decomposition, and validation that single prompt LLM calls cannot reliably execute without hallucination or context loss.',
+      solution:
+        'Architected an 8-step autonomous multi-agent framework where specialized supervisor and worker agents collaboratively plan, delegate, execute, and verify research objectives across multiple technical domains.',
+      myContribution:
+        'Designed state graph routing using LangGraph, configured low-latency LLM inference via Groq AI, built FastAPI REST endpoints, and instrumented LangSmith for real-time trace inspection.',
+      architecture:
+        'StateGraph orchestrator -> Supervisor Router -> Domain Researcher Agents -> Tool Executor -> Verifier Agent -> FastAPI Backend -> Hugging Face Spaces deployment.',
+      technologyStack: ['LangGraph', 'Groq AI', 'LLaMA 3', 'FastAPI', 'LangSmith', 'Python', 'Hugging Face'],
+      keyFeatures: [
+        '8-step autonomous research orchestration with 100% delegation success rate',
+        'Stateful execution graphs with memory persistence and conditional edge routing',
+        'Real-time token cost and latency observability through LangSmith',
+        'Production REST API endpoints for seamless frontend integration',
+      ],
+      screenshots: [projCognitiveImg],
+      githubUrl: 'https://github.com/Namitha938',
+      liveDemoUrl: 'https://huggingface.co/spaces',
+    },
   },
   {
-    title: 'TruthLens — AI Misinformation Detector',
+    id: 'truthlens',
+    title: 'TruthLens – AI Misinformation Detector',
     period: 'Jan 2026 – Mar 2026',
     description:
-      'Real-time claim analysis pipeline across 6 credibility dimensions, predictions in under 3 seconds with 99.9% uptime; SHAP-based explainability for audit-ready transparency.',
-    tech: ['HuggingFace Transformers', 'SHAP', 'Streamlit', 'Hugging Face'],
+      'An AI-powered misinformation detection application that analyzes claims across credibility dimensions with explainable AI.',
+    tech: ['Hugging Face Transformers', 'SHAP', 'Streamlit', 'Hugging Face'],
     category: 'LLM/Agents',
     link: 'https://github.com/Namitha938',
     image: projTruthlensImg,
+    highlights: [
+      'Claim analysis',
+      'Credibility assessment',
+      'Explainable AI',
+      'SHAP integration',
+    ],
+    details: {
+      problemStatement:
+        'Online misinformation spreads rapidly, yet black-box AI classification models fail to provide clear, audit-ready reasoning behind why a claim is flagged as deceptive.',
+      solution:
+        'Engineered an end-to-end credibility assessment engine using pre-trained Transformer language models paired with SHAP (SHapley Additive exPlanations) to highlight word-level attribution for every prediction.',
+      myContribution:
+        'Fine-tuned Hugging Face transformer models for multi-factor credibility classification, built the interactive Streamlit user interface, and generated SHAP force plots for transparent explainability.',
+      architecture:
+        'User Claim Input -> Text Preprocessing -> Hugging Face Transformer Inference -> SHAP Attribution Engine -> Streamlit Visualization & Audit Report.',
+      technologyStack: ['Hugging Face Transformers', 'PyTorch', 'SHAP', 'Streamlit', 'Python', 'Hugging Face Spaces'],
+      keyFeatures: [
+        'Comprehensive claim assessment across 6 credibility dimensions in under 3 seconds',
+        'Explainable AI (XAI) feature importance visualization through SHAP attribution values',
+        'Interactive confidence score breakdown with audit-ready transparency reports',
+        'Deployed with 99.9% uptime on Hugging Face Spaces',
+      ],
+      screenshots: [projTruthlensImg],
+      githubUrl: 'https://github.com/Namitha938',
+      liveDemoUrl: 'https://huggingface.co/spaces',
+    },
   },
   {
+    id: 'resume-screening',
     title: 'AI Resume Screening Engine',
     period: 'Oct 2025 – Dec 2025',
     description:
-      'Automated batch candidate ranking using LLaMA 3 prompt engineering with structured AI match scores and reusable schemas for enterprise HR automation.',
-    tech: ['Python', 'Groq AI', 'LLaMA 3', 'Prompt Engineering'],
+      'An AI-based resume screening application that automates candidate analysis, skill extraction, and job match ranking.',
+    tech: ['Python', 'Groq AI', 'LLaMA 3', 'Prompt Engineering', 'FastAPI'],
     category: 'LLM/Agents',
     link: 'https://github.com/Namitha938',
     image: projResumeImg,
+    highlights: [
+      'Resume analysis',
+      'NLP-based skill extraction',
+      'Candidate ranking',
+      'Structured AI outputs',
+    ],
+    details: {
+      problemStatement:
+        'Manual resume screening for technical roles is slow and inconsistent, while traditional keyword matching misses contextual candidate competencies.',
+      solution:
+        'Developed an intelligent screening pipeline using LLaMA 3 via Groq AI that extracts granular candidate competencies, computes semantic relevance against job descriptions, and returns structured candidate rankings.',
+      myContribution:
+        'Developed the NLP skill-extraction logic, engineered zero-shot and few-shot JSON prompt templates, built FastAPI REST endpoints, and added LangSmith evaluation traces.',
+      architecture:
+        'PDF/Text Resume Ingestion -> NLP Text Parser -> Groq AI LLaMA 3 Evaluation -> JSON Schema Validator -> Match Scoring & Ranking Engine -> FastAPI REST Service.',
+      technologyStack: ['Python', 'Groq AI', 'LLaMA 3', 'FastAPI', 'LangSmith', 'JSON Schema'],
+      keyFeatures: [
+        'Automated batch parsing and multi-candidate comparison against job descriptions',
+        'NLP-based technical skill extraction and domain experience weighting',
+        'Strict JSON schema validation preventing parsing errors in automated HR pipelines',
+        'FastAPI REST endpoints for seamless integration into recruitment workflows',
+      ],
+      screenshots: [projResumeImg],
+      githubUrl: 'https://github.com/Namitha938',
+      liveDemoUrl: 'https://huggingface.co/spaces',
+    },
   },
   {
+    id: 'music-recommendation',
     title: 'Emotion-Based Music Recommendation System',
     period: 'Aug 2025 – Sep 2025',
     description:
-      'Django backend for real-time webcam emotion detection (OpenCV, TensorFlow) with 90%+ accuracy; Spotify Web API integration for personalized playlists under 2-second latency.',
+      'An emotion-aware music recommendation application using webcam-based emotion detection and personalized music suggestions.',
     tech: ['Django', 'OpenCV', 'DeepFace', 'TensorFlow', 'Spotify API'],
     category: 'Full-Stack',
     link: 'https://github.com/Namitha938',
     image: projEmotionImg,
+    highlights: [
+      'Real-time emotion detection',
+      'Computer vision',
+      'Music recommendation',
+      'Spotify API integration',
+    ],
+    details: {
+      problemStatement:
+        'Standard music streaming platforms rely on historical listening data and cannot adapt in real time to the user’s immediate emotional state.',
+      solution:
+        'Created a computer vision pipeline that captures webcam video, detects facial expressions using DeepFace/OpenCV, classifies emotions with 90%+ accuracy, and triggers dynamic playlist recommendations via the Spotify Web API.',
+      myContribution:
+        'Implemented the OpenCV real-time video feed processor, configured DeepFace neural network classification, built the Django backend service, and integrated Spotify OAuth/API endpoints.',
+      architecture:
+        'Webcam Video Stream -> OpenCV Frame Capture -> DeepFace Emotion Classifier -> Django Backend -> Spotify Web API -> Real-Time Responsive Audio UI.',
+      technologyStack: ['Django', 'Python', 'OpenCV', 'DeepFace', 'TensorFlow', 'Spotify Web API', 'JavaScript'],
+      keyFeatures: [
+        'Real-time facial expression analysis with 90%+ emotion classification accuracy',
+        'Sub-2-second latency from webcam face capture to curated Spotify playlist playback',
+        'Custom Django REST views handling secure OAuth authentication with Spotify',
+        'Emotion tracking dashboard reflecting emotional shifts during playback sessions',
+      ],
+      screenshots: [projEmotionImg],
+      githubUrl: 'https://github.com/Namitha938',
+    },
   },
   {
-    title: 'CropGuard AI — Crop Disease Detection & RAG Advisory',
+    id: 'cropguard-ai',
+    title: 'CropGuard AI – Crop Disease Detection & RAG Advisory',
     period: 'Apr 2026 – May 2026',
     description:
-      'CNN pipeline (ResNet18) trained on 54,306 PlantVillage images across 38 disease classes, 95% training accuracy; LangChain + FAISS RAG pipeline for real-time agricultural treatment advisory.',
-    tech: [
-      'PyTorch',
-      'ResNet18',
-      'LangChain',
-      'FAISS',
-      'Sentence Transformers',
-      'Streamlit',
-    ],
+      'An AI-powered agricultural application combining crop disease classification and retrieval-augmented recommendations.',
+    tech: ['PyTorch', 'ResNet18', 'LangChain', 'FAISS', 'Sentence Transformers', 'Streamlit'],
     category: 'Computer Vision',
     link: 'https://github.com/Namitha938',
     image: projCropguardImg,
+    highlights: [
+      'CNN crop disease classification',
+      'PlantVillage dataset (54k images)',
+      'RAG-based advisory',
+      'Context-aware retrieval',
+    ],
+    details: {
+      problemStatement:
+        'Smallholder farmers face severe crop yield losses due to delayed disease identification and lack of contextual, actionable treatment guidance.',
+      solution:
+        'Engineered a dual-pipeline AI solution combining a ResNet-18 convolutional neural network for image disease diagnosis with a LangChain + FAISS RAG system to deliver context-specific organic and chemical remedy recommendations.',
+      myContribution:
+        'Trained and evaluated the ResNet-18 model on 54,306 images across 38 disease classes, built FAISS vector embeddings of agricultural treatment guides, and developed the Streamlit user app.',
+      architecture:
+        'Leaf Image Upload -> ResNet-18 CNN -> Predicted Disease Class -> FAISS Semantic Retrieval -> LangChain Context Synthesis -> Treatment Advisory Report.',
+      technologyStack: ['PyTorch', 'ResNet18', 'LangChain', 'FAISS', 'Sentence Transformers', 'Streamlit', 'Python'],
+      keyFeatures: [
+        '95% training accuracy across 38 distinct crop disease classifications from PlantVillage',
+        'RAG-powered advisory synthesizing regional treatment guidelines and organic solutions',
+        'Low-bandwidth accessible UI designed specifically for rural agricultural field usage',
+        'Interactive confidence score visualization with preventive care steps',
+      ],
+      screenshots: [projCropguardImg],
+      githubUrl: 'https://github.com/Namitha938',
+    },
   },
   {
+    id: 'learning-buddy',
     title: 'AI Learning Buddy',
     period: 'Jun 2026 – Jul 2026',
     description:
-      'Streamlit study companion powered by the Gemini API with scored quizzes, adjustable difficulty levels, dark/light themes, and downloadable session history.',
+      'An interactive AI study companion with scored quizzes, adjustable difficulty levels, and session analytics.',
     tech: ['Streamlit', 'Gemini API', 'Python', 'Prompt Engineering'],
     category: 'LLM/Agents',
     link: 'https://github.com/Namitha938',
     image: projLearningImg,
-  },
-  {
-    title: 'Crop & Weed Detection System',
-    period: 'May 2026 – Jun 2026',
-    description:
-      'YOLOv5s object-detection pipeline fine-tuned on 1,300 field images with Albumentations augmentation and Colab GPU training for precision-agriculture weed targeting.',
-    tech: ['YOLOv5', 'PyTorch', 'Albumentations', 'Google Colab'],
-    category: 'Computer Vision',
-    link: 'https://github.com/Namitha938',
-    image: projWeedImg,
+    highlights: ['Gemini API integration', 'Adaptive quizzes', 'Session analytics', 'Streamlit UI'],
+    details: {
+      problemStatement:
+        'Static educational content lacks adaptive feedback, personalized quiz generation, and active recall assistance for technical learners.',
+      solution:
+        'Built an AI tutor utilizing the Gemini API to dynamically generate structured topic quizzes, evaluate free-form answers, and provide constructive technical explanations.',
+      myContribution:
+        'Engineered prompt chains for dynamic quiz generation, implemented session state analytics in Streamlit, and designed downloadable study summaries.',
+      architecture:
+        'Topic Input -> Gemini API Prompt Engine -> Dynamic Quiz Generation -> Answer Evaluation -> Score & History Analytics.',
+      technologyStack: ['Streamlit', 'Gemini API', 'Python', 'Prompt Engineering'],
+      keyFeatures: [
+        'Dynamic multi-topic quiz generation with adjustable difficulty levels',
+        'AI evaluation of student answers with step-by-step corrections',
+        'Session history export and performance analytics tracking',
+      ],
+      screenshots: [projLearningImg],
+      githubUrl: 'https://github.com/Namitha938',
+    },
   },
 ];
 
-export const servicesData: ServiceItem[] = [
+export const educationData: EducationItem = {
+  degree: 'Bachelor of Technology (B.Tech)',
+  field: 'Artificial Intelligence and Machine Learning',
+  institution: 'Swarna Bharathi Institute of Science and Technology',
+  location: 'Khammam, India',
+  period: 'August 2023 – May 2027',
+  cgpa: '8.4/10',
+  coursework: [
+    'Data Structures & Algorithms',
+    'Machine Learning & Deep Learning',
+    'Natural Language Processing',
+    'Computer Vision & Neural Networks',
+    'Database Management Systems (SQL & MongoDB)',
+    'Object-Oriented Programming (Python & Java)',
+    'Operating Systems & System Architecture',
+    'Full-Stack Web Development',
+  ],
+};
+
+export const certificationsData: CertificationItem[] = [
   {
-    title: 'AI Agent & Multi-Agent Systems',
-    body: 'Designing stateful multi-agent architectures (LangGraph, Groq AI) with supervisor delegation, memory management, and end-to-end observability (LangSmith).',
-    icon: 'Workflow',
+    title: 'GenAI Powered Data Analytics',
+    issuer: 'Forage',
+    date: 'February 2026',
+    verificationUrl: 'https://www.theforage.com/',
+    description:
+      'Practical engineering simulation program focused on applying Generative AI to enterprise data analytics workflows, AI-assisted business intelligence modeling, and data visualization.',
+    skills: ['Generative AI', 'Data Analytics', 'Prompt Engineering', 'Business Intelligence', 'Data Modeling'],
+  },
+];
+
+export const achievementsData: AchievementItem[] = [
+  {
+    title: 'Academic Excellence in AI & ML',
+    category: 'Academic Honor',
+    metric: '8.4 / 10 CGPA',
+    description:
+      'Maintained consistent top-tier academic standing across 6 semesters in B.Tech Artificial Intelligence & Machine Learning at Swarna Bharathi Institute of Science and Technology.',
+    date: '2023 – Present',
   },
   {
-    title: 'LLM & RAG Solutions',
-    body: 'Building custom Retrieval-Augmented Generation pipelines using LangChain, FAISS, and vector embeddings for context-aware, domain-specific solutions.',
-    icon: 'Brain',
+    title: 'Three Competitive AI Engineering Internships',
+    category: 'Industry Selection',
+    metric: '3 Internships',
+    description:
+      'Selected for and successfully completed three remote engineering internships at Infosys (Pragati: Path to Future), Infosys Springboard, and Internz Learn focused on Cloud AI and LLM agents.',
+    date: '2025 – 2026',
   },
   {
-    title: 'AI/ML & Computer Vision',
-    body: 'Developing and fine-tuning deep learning models (PyTorch, TensorFlow, ResNet18, OpenCV, DeepFace) for emotion recognition, object detection, and disease classification.',
-    icon: 'Eye',
+    title: '100% Multi-Agent Delegation Milestone',
+    category: 'Engineering Architecture',
+    metric: '100% Success',
+    description:
+      'Engineered an 8-step autonomous research orchestration pipeline using LangGraph and Groq AI, hitting 14/14 milestones and achieving 100% delegation success across 5 technical domains.',
+    date: 'April 2026',
   },
   {
-    title: 'Backend & API Development',
-    body: 'Architecting scalable RESTful APIs and microservices using FastAPI, Django, and Flask with SQL/NoSQL database integration.',
-    icon: 'Server',
+    title: 'Production-Grade AI Deployments',
+    category: 'Cloud & API Delivery',
+    metric: '7+ Applications',
+    description:
+      'Built and deployed 7+ production AI applications on Hugging Face Spaces and FastAPI with real-time inference under 2 seconds and full LangSmith observability.',
+    date: '2025 – 2026',
   },
   {
-    title: 'Full-Stack AI Applications',
-    body: 'Building production-ready, interactive AI web apps with Python frameworks, Streamlit, HTML/CSS/JS, and third-party API integrations.',
-    icon: 'Layers',
-  },
-  {
-    title: 'Data Analytics & Explainable AI',
-    body: 'Implementing EDA, ETL pipelines, and audit-ready explainability (SHAP) alongside business dashboards in Power BI and Tableau.',
-    icon: 'BarChart3',
+    title: 'Verified GenAI Data Analytics Credential',
+    category: 'Professional Certification',
+    metric: 'Forage Certified',
+    description:
+      'Earned credential in GenAI Powered Data Analytics through Forage, mastering prompt-driven analytical modeling and automated insight extraction.',
+    date: 'February 2026',
   },
 ];
 
 export const navItems = [
   { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'education', label: 'Education' },
-  { id: 'skills', label: 'Skills' },
+  { id: 'about', label: 'About Me' },
+  { id: 'skills', label: 'Technical Skills' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
-  { id: 'services', label: 'Services' },
+  { id: 'education', label: 'Education' },
+  { id: 'certifications', label: 'Certifications' },
+  { id: 'achievements', label: 'Achievements' },
   { id: 'contact', label: 'Contact' },
 ];
-

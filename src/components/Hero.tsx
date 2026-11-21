@@ -1,49 +1,8 @@
-import { useState, useEffect } from 'react';
-import { ArrowRight, Github, Linkedin, Mail, FileText, Sparkles } from 'lucide-react';
+import { ArrowRight, Download, Mail, Github, Linkedin, Sparkles } from 'lucide-react';
 import ParticleCanvas from './ParticleCanvas';
 import { personalInfo } from '../data/portfolio';
 
-interface HeroProps {
-  onRequestResume: () => void;
-}
-
-const ROTATING_SPECIALIZATIONS = [
-  'Production Web Apps & REST APIs',
-  'LLM & Multi-Agent Workflows',
-  'Computer Vision & PyTorch Models',
-  'MERN Stack & FastAPI Backends',
-];
-
-export default function Hero({ onRequestResume }: HeroProps) {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  // Typewriter effect
-  useEffect(() => {
-    const currentFullText = ROTATING_SPECIALIZATIONS[roleIndex];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (!isDeleting && displayedText === currentFullText) {
-      // Pause at full text
-      timeout = setTimeout(() => setIsDeleting(true), 2000);
-    } else if (isDeleting && displayedText === '') {
-      // Switch to next text
-      setIsDeleting(false);
-      setRoleIndex((prev) => (prev + 1) % ROTATING_SPECIALIZATIONS.length);
-    } else {
-      // Typing or deleting
-      const speed = isDeleting ? 25 : 50;
-      timeout = setTimeout(() => {
-        setDisplayedText(
-          currentFullText.substring(0, displayedText.length + (isDeleting ? -1 : 1))
-        );
-      }, speed);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayedText, isDeleting, roleIndex]);
-
+export default function Hero() {
   const socialLinks = [
     { href: personalInfo.githubUrl, Icon: Github, label: 'GitHub' },
     { href: personalInfo.linkedinUrl, Icon: Linkedin, label: 'LinkedIn' },
@@ -71,59 +30,55 @@ export default function Hero({ onRequestResume }: HeroProps) {
               </span>
               <span className="flex items-center gap-1 text-muted-foreground">
                 <Sparkles className="size-3 text-primary animate-spin" style={{ animationDuration: '6s' }} />
-                Open to AI/ML & Engineering Roles
+                Open to AI & Full-Stack Opportunities
               </span>
             </div>
 
             {/* Main Heading */}
             <div className="space-y-3">
-              <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                Hi, I'm {personalInfo.name}{' '}
+              <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-foreground">
+                {personalInfo.name}{' '}
                 <span className="text-gradient block sm:inline">{personalInfo.lastName}</span>
               </h1>
 
               {/* Main Headline */}
-              <p className="font-display text-xl font-semibold text-primary sm:text-2xl tracking-tight">
+              <p className="font-display text-xl sm:text-2xl font-semibold text-primary tracking-tight">
                 {personalInfo.professionalTitle}
               </p>
-
-              {/* Dynamic Animated Typing Specialization */}
-              <div className="h-7 flex items-center justify-center lg:justify-start text-xs sm:text-sm text-muted-foreground font-medium">
-                <span>Specializing in&nbsp;</span>
-                <span className="text-foreground font-semibold">{displayedText}</span>
-                <span className="inline-block w-[2px] h-3.5 sm:h-4 ml-1 bg-accent animate-pulse align-middle" />
-              </div>
             </div>
 
             {/* Description */}
-            <p className="max-w-xl text-base text-muted-foreground leading-relaxed sm:text-lg">
+            <p className="max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
               {personalInfo.tagline}
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-2 lg:justify-start">
+            {/* 3 Prominent CTA Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2 lg:justify-start">
+              {/* Button 1: View Projects */}
               <a
                 href="#projects"
-                className="btn-shimmer inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:shadow-glow hover:scale-[1.04] active:scale-95"
+                className="btn-shimmer inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all duration-200 hover:scale-[1.04] active:scale-95"
               >
-                View Projects <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                <span>View Projects</span>
+                <ArrowRight className="size-4" />
               </a>
 
-              <button
-                type="button"
-                onClick={onRequestResume}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur-sm transition-all duration-200 hover:bg-secondary hover:border-primary/50 hover:scale-[1.04] active:scale-95 cursor-pointer"
+              {/* Button 2: Download Resume (Direct PDF Download) */}
+              <a
+                href={personalInfo.resumeUrl}
+                download="Namitha_Singu_Resume.pdf"
+                className="btn-shimmer inline-flex items-center gap-2 rounded-full border border-primary/40 bg-secondary/60 px-6 py-3.5 text-sm font-semibold text-foreground backdrop-blur-md transition-all duration-200 hover:bg-secondary hover:border-primary hover:scale-[1.04] active:scale-95 shadow-sm"
               >
-                <FileText className="size-4 text-primary" /> Request Resume
-              </button>
+                <Download className="size-4 text-primary" />
+                <span>Download Resume</span>
+              </a>
 
+              {/* Button 3: Contact Me */}
               <a
                 href="#contact"
-                className="rounded-full bg-gradient-brand p-[1px] transition-transform duration-200 hover:scale-[1.04] active:scale-95"
+                className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background/80 px-6 py-3.5 text-sm font-semibold text-foreground backdrop-blur-md transition-all duration-200 hover:border-primary/60 hover:bg-secondary/40 hover:scale-[1.04] active:scale-95"
               >
-                <span className="block rounded-full bg-background px-6 py-3 text-sm font-semibold hover:bg-secondary/40 transition-colors">
-                  Get in Touch
-                </span>
+                <span>Contact Me</span>
               </a>
             </div>
 
@@ -163,6 +118,7 @@ export default function Hero({ onRequestResume }: HeroProps) {
                     className="size-full rounded-full object-cover transition-transform duration-700 group-hover:scale-105"
                     width="384"
                     height="384"
+                    loading="eager"
                   />
                 </div>
               </div>
