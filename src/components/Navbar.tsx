@@ -111,23 +111,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Medium Screen Compact Menu */}
-        <div className="hidden md:flex xl:hidden items-center gap-1">
-          {navItems.slice(0, 5).map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={() => handleNavClick(item.id)}
-              className={`rounded-full px-2.5 py-1 text-xs font-medium transition-colors ${
-                activeSection === item.id ? 'text-primary font-semibold' : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        {/* CTA & Mobile Menu Toggle */}
+        {/* CTA & Mobile/Tablet Menu Toggle */}
         <div className="flex items-center gap-2">
           {/* Direct Resume Download Button */}
           <a
