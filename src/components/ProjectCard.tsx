@@ -77,7 +77,7 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
             className="inline-flex items-center gap-1.5 rounded-full bg-secondary/80 border border-border/80 px-3.5 py-1.5 text-xs font-medium text-foreground hover:bg-secondary hover:border-primary hover:text-primary transition-all cursor-pointer"
           >
             <Info className="size-3.5" />
-            <span>Deep Dive</span>
+            <span>Architecture & Details</span>
           </button>
 
           {/* GitHub button */}

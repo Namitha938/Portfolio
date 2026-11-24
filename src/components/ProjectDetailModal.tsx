@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { X, Github, ExternalLink, CheckCircle2, Layers, Cpu, Lightbulb, UserCheck, Image as ImageIcon } from 'lucide-react';
+import { X, Github, ExternalLink, CheckCircle2, Layers, Cpu, Lightbulb, UserCheck, Image as ImageIcon, BookOpen } from 'lucide-react';
 import { ProjectItem } from '../data/portfolio';
 
 interface ProjectDetailModalProps {
@@ -68,28 +68,38 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
         </div>
 
         {/* Scrollable Body */}
-        <div className="flex-1 overflow-y-auto px-6 py-6 sm:px-8 space-y-8">
-          {/* 7. Screenshots / Banner */}
+        <div className="flex-1 overflow-y-auto px-6 py-6 sm:px-8 space-y-7">
+          {/* Visual Architecture Banner */}
           <div className="overflow-hidden rounded-2xl border border-border bg-secondary/20 shadow-inner">
-            <div className="relative aspect-video max-h-80 w-full overflow-hidden">
+            <div className="relative aspect-video max-h-72 w-full overflow-hidden">
               <img
                 src={project.image}
-                alt={`${project.title} screenshot`}
+                alt={`${project.title} preview`}
                 className="size-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-4 flex items-center gap-2 rounded-full bg-background/80 backdrop-blur-md px-3 py-1 text-xs text-muted-foreground border border-border/60">
                 <ImageIcon className="size-3.5 text-primary" />
-                <span>Production Architecture Preview</span>
+                <span>Production Architecture & System Preview</span>
               </div>
             </div>
           </div>
 
-          {/* 1. Problem Statement & 2. Solution */}
-          <div className="grid gap-6 md:grid-cols-2">
+          {/* 1. Project Overview */}
+          <div className="rounded-2xl border border-border/80 bg-secondary/30 p-5">
+            <h3 className="font-display text-sm font-semibold text-foreground flex items-center gap-2 mb-2">
+              <BookOpen className="size-4 text-primary" /> Project Overview
+            </h3>
+            <p className="text-sm text-foreground/90 leading-relaxed">
+              {project.description}
+            </p>
+          </div>
+
+          {/* 2. Problem Statement & Solution */}
+          <div className="grid gap-5 md:grid-cols-2">
             <div className="rounded-2xl border border-destructive/20 bg-destructive/5 p-5">
               <h3 className="font-display text-sm font-semibold text-destructive flex items-center gap-2 mb-2">
-                <Lightbulb className="size-4" /> 1. Problem Statement
+                <Lightbulb className="size-4" /> Problem Statement
               </h3>
               <p className="text-sm text-foreground/85 leading-relaxed">
                 {details.problemStatement}
@@ -98,7 +108,7 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
 
             <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5">
               <h3 className="font-display text-sm font-semibold text-primary flex items-center gap-2 mb-2">
-                <CheckCircle2 className="size-4" /> 2. Solution
+                <CheckCircle2 className="size-4" /> Solution
               </h3>
               <p className="text-sm text-foreground/85 leading-relaxed">
                 {details.solution}
@@ -106,30 +116,30 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
             </div>
           </div>
 
-          {/* 3. My Contribution */}
+          {/* 3. Individual Contribution */}
           <div className="rounded-2xl border border-border bg-secondary/25 p-5">
             <h3 className="font-display text-sm font-semibold text-foreground flex items-center gap-2 mb-2">
-              <UserCheck className="size-4 text-primary" /> 3. My Contribution & Engineering Ownership
+              <UserCheck className="size-4 text-primary" /> Individual Contribution
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {details.myContribution}
             </p>
           </div>
 
-          {/* 4. Architecture */}
+          {/* 4. Technical Architecture */}
           <div className="rounded-2xl border border-border bg-secondary/30 p-5">
             <h3 className="font-display text-sm font-semibold text-foreground flex items-center gap-2 mb-2.5">
-              <Workflow className="size-4 text-primary" /> 4. System Architecture & Flow
+              <Workflow className="size-4 text-primary" /> Technical Architecture
             </h3>
-            <div className="rounded-xl border border-border/80 bg-background/60 p-4 font-mono text-xs text-primary leading-relaxed break-words">
+            <div className="rounded-xl border border-border/80 bg-background/70 p-4 font-mono text-xs text-primary leading-relaxed break-words">
               {details.architecture}
             </div>
           </div>
 
-          {/* 5. Technology Stack */}
+          {/* 5. Tech Stack */}
           <div>
             <h3 className="font-display text-sm font-semibold text-foreground flex items-center gap-2 mb-3">
-              <Cpu className="size-4 text-primary" /> 5. Technology Stack
+              <Cpu className="size-4 text-primary" /> Tech Stack
             </h3>
             <div className="flex flex-wrap gap-2">
               {details.technologyStack.map((tech) => (
@@ -146,7 +156,7 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
           {/* 6. Key Features */}
           <div>
             <h3 className="font-display text-sm font-semibold text-foreground flex items-center gap-2 mb-3">
-              <Layers className="size-4 text-primary" /> 6. Key Features & Verified Capabilities
+              <Layers className="size-4 text-primary" /> Key Features
             </h3>
             <div className="grid gap-2.5 sm:grid-cols-2">
               {details.keyFeatures.map((feature, i) => (
@@ -162,10 +172,10 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
           </div>
         </div>
 
-        {/* Footer: 8. GitHub Repository & 9. Live Demo */}
+        {/* Footer: GitHub Repository & Live Demo */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border/80 px-6 py-4 bg-secondary/20">
           <div className="flex items-center gap-3">
-            {/* 8. GitHub Repository */}
+            {/* GitHub Repository */}
             <a
               href={details.githubUrl}
               target="_blank"
@@ -177,7 +187,7 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
               <ExternalLink className="size-3 text-muted-foreground" />
             </a>
 
-            {/* 9. Live Demo */}
+            {/* Live Demo */}
             {details.liveDemoUrl && (
               <a
                 href={details.liveDemoUrl}

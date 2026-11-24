@@ -70,6 +70,7 @@ export interface ExperienceItem {
   dates: string;
   location: string;
   responsibilities: string[];
+  achievement?: string;
   tech: string[];
 }
 
@@ -102,20 +103,20 @@ export interface ProjectItem {
 export const personalInfo: PersonalInfo = {
   name: 'Namitha',
   lastName: 'Singu',
-  role: 'Full-Stack Software Developer | AI Engineer',
-  professionalTitle: 'Full-Stack Software Developer | AI Engineer',
+  role: 'Full-Stack Developer | AI Engineer',
+  professionalTitle: 'Full-Stack Developer | AI Engineer',
   specialization:
     'Specializing in Generative AI, LLM & Multi-Agent Systems, Computer Vision, and Enterprise AI Delivery.',
   tagline:
     'Building AI-powered applications, intelligent systems, and scalable web solutions.',
   introduction:
-    'I am a Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning, with hands-on experience in AI/ML and full-stack development. I work with Python, MERN Stack, RAG systems, REST APIs, and modern AI frameworks to build scalable and intelligent software solutions. I am passionate about developing AI-powered applications, intelligent systems, and practical software solutions that solve real-world problems.',
+    'I am a Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning, with hands-on experience in AI/ML and full-stack development. I work with Python, React, FastAPI, RAG systems, REST APIs, and modern AI frameworks to build scalable and intelligent software solutions. Passionate about engineering high-impact web and AI solutions for real-world enterprise applications.',
   careerInterests: [
+    'Software Developer',
+    'Full-Stack Developer',
     'AI Engineer',
     'Generative AI Developer',
-    'Full-Stack Software Developer',
     'Python Developer',
-    'Associate Software Engineer',
   ],
   email: 'namithaaa444@gmail.com',
   location: 'Hyderabad, India',
@@ -129,18 +130,18 @@ export const personalInfo: PersonalInfo = {
 export const aboutContent = {
   heading: 'Engineering with Intelligence & Purpose',
   paragraphs: [
-    'I am a Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning, with a strong interest in software engineering and intelligent application development.',
-    'I have hands-on experience building AI-powered applications, LLM-based systems, multi-agent workflows, natural language processing solutions, computer vision applications, and full-stack web applications.',
-    'My technical interests include Generative AI, Machine Learning, RAG systems, backend development, and scalable software architecture.',
-    'I enjoy transforming ideas into functional applications, exploring emerging technologies, and continuously improving my engineering and problem-solving skills.',
-    'My goal is to contribute to innovative engineering teams and build impactful software and AI solutions.',
+    'I am a Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning, with a strong foundation in full-stack software development, REST API engineering, and intelligent application design.',
+    'I have hands-on experience building production-ready AI applications, multi-agent LLM pipelines, natural language processing tools, computer vision diagnostics, and responsive full-stack web applications.',
+    'My core technical strengths span Python, JavaScript, React.js, FastAPI, Django, LangGraph, PyTorch, RAG architectures, and cloud deployments on Azure and Hugging Face.',
+    'I am focused on writing clean, scalable, maintainable code and solving real-world challenges in collaborative, high-velocity engineering teams.',
+    'My immediate career goal is to excel as a Software Developer, Full-Stack Developer, or AI Engineer fresher, creating measurable technical impact.',
   ],
   careerInterests: [
+    'Software Developer',
+    'Full-Stack Developer',
     'AI Engineer',
     'Generative AI Developer',
-    'Full-Stack Software Developer',
     'Python Developer',
-    'Associate Software Engineer',
   ],
   stats: [
     { value: 8.4, suffix: '/10', label: 'B.Tech CGPA' },
@@ -152,19 +153,19 @@ export const aboutContent = {
 
 export const skillsCategories: SkillCategory[] = [
   {
-    name: 'Programming Languages',
-    iconName: 'Code',
-    items: ['Python', 'JavaScript', 'HTML', 'CSS', 'Java', 'SQL'],
-  },
-  {
     name: 'Frontend',
     iconName: 'Layout',
-    items: ['React.js', 'HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS'],
+    items: ['React.js', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Responsive UI Design'],
   },
   {
     name: 'Backend',
     iconName: 'Server',
-    items: ['FastAPI', 'Django', 'Flask', 'REST API Development'],
+    items: ['FastAPI', 'Django', 'Flask', 'REST API Development', 'Authentication & Routing'],
+  },
+  {
+    name: 'Databases',
+    iconName: 'Database',
+    items: ['MySQL', 'SQLite3', 'MongoDB', 'Data Modeling', 'Query Optimization'],
   },
   {
     name: 'AI & Machine Learning',
@@ -174,52 +175,47 @@ export const skillsCategories: SkillCategory[] = [
       'Deep Learning',
       'Natural Language Processing',
       'Computer Vision',
-      'Generative AI',
-      'Large Language Models',
-    ],
-  },
-  {
-    name: 'AI Frameworks & Libraries',
-    iconName: 'Cpu',
-    items: [
-      'LangGraph',
-      'LangChain',
-      'Hugging Face Transformers',
       'PyTorch',
       'TensorFlow',
-      'Keras',
       'Scikit-learn',
-      'SHAP',
-      'DeepFace',
       'OpenCV',
-      'NLTK',
-      'FAISS',
-      'Sentence Transformers',
-      'Groq AI',
-      'LLaMA 3',
+      'DeepFace',
+      'SHAP',
     ],
   },
   {
-    name: 'Databases',
-    iconName: 'Database',
-    items: ['MySQL', 'SQLite3', 'MongoDB'],
+    name: 'Generative AI',
+    iconName: 'Cpu',
+    items: [
+      'Large Language Models (LLMs)',
+      'LangGraph Multi-Agent Systems',
+      'LangChain',
+      'RAG Architectures',
+      'FAISS Vector Search',
+      'Sentence Transformers',
+      'Groq AI & LLaMA 3',
+      'Prompt Engineering',
+      'LangSmith Tracing',
+    ],
   },
   {
-    name: 'Tools & Platforms',
+    name: 'Developer Tools',
     iconName: 'Wrench',
     items: [
       'Microsoft Azure',
-      'Docker',
-      'Git',
-      'GitHub',
+      'Docker Containers',
+      'Git & GitHub',
       'Hugging Face Spaces',
       'Streamlit',
-      'Power BI',
-      'Tableau',
-      'Excel',
       'Postman',
-      'LangSmith',
+      'Power BI',
+      'VS Code',
     ],
+  },
+  {
+    name: 'Programming Languages',
+    iconName: 'Code',
+    items: ['Python', 'JavaScript', 'SQL', 'Java', 'HTML', 'CSS'],
   },
 ];
 
@@ -232,10 +228,11 @@ export const experienceData: ExperienceItem[] = [
     location: 'Remote',
     responsibilities: [
       'Evaluated Azure IaaS, PaaS, and SaaS infrastructure for AI/ML workloads across 10+ deployment environments.',
-      'Benchmarked compute and storage configurations to optimize resource allocation and execution efficiency by 25%.',
+      'Benchmarked compute and storage configurations to optimize resource allocation and execution efficiency.',
       'Worked on resource allocation, execution efficiency, and containerized deployment workflows.',
       'Gained hands-on experience with enterprise cloud computing, Docker virtualization, and Python engineering.',
     ],
+    achievement: 'Benchmarked 10+ deployment environments and improved cloud execution efficiency by 25% on Azure.',
     tech: ['Azure', 'Docker', 'Python', 'Object-Oriented Programming'],
   },
   {
@@ -244,11 +241,12 @@ export const experienceData: ExperienceItem[] = [
     dates: 'February 2026 – April 2026',
     location: 'Remote',
     responsibilities: [
-      'Engineered an 8-step multi-agent pipeline using LangGraph and Groq AI with 100% delegation success across 5 domains.',
+      'Engineered an 8-step multi-agent pipeline using LangGraph and Groq AI with supervisor routing.',
       'Implemented stateful agent delegation, supervisor routing, and autonomous workflow orchestration.',
       'Integrated LangSmith for comprehensive LLM observability, latency tracing, and token monitoring.',
       'Deployed a production-grade FastAPI REST backend on Hugging Face Spaces adhering to enterprise standards.',
     ],
+    achievement: 'Achieved 100% agent delegation success across 5 technical domains in an 8-step LangGraph workflow.',
     tech: ['LangGraph', 'Groq AI', 'FastAPI', 'LangSmith', 'Python'],
   },
   {
@@ -259,9 +257,10 @@ export const experienceData: ExperienceItem[] = [
     responsibilities: [
       'Built an AI resume screening application using Python, Groq AI, and LLaMA 3 for automated candidate evaluation.',
       'Developed NLP-based skill extraction and candidate ranking functionality with structured output schemas.',
-      'Deployed the application using FastAPI on Hugging Face Spaces for real-time inference under 2 seconds.',
+      'Deployed the application using FastAPI on Hugging Face Spaces for real-time inference.',
       'Integrated LangSmith tracing for performance observability and prompt accuracy tuning.',
     ],
+    achievement: 'Deployed automated screening API achieving sub-2-second inference latency on Hugging Face Spaces.',
     tech: ['Python', 'Groq AI', 'LLaMA 3', 'FastAPI', 'LangSmith'],
   },
 ];

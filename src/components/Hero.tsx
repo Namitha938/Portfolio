@@ -47,9 +47,9 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Description */}
-            <p className="max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-              {personalInfo.tagline}
+            {/* Professional Introduction */}
+            <p className="max-w-xl text-sm sm:text-base text-foreground/85 leading-relaxed">
+              Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning. Building scalable web solutions, multi-agent LLM systems, and production AI applications with Python, React, and modern cloud architectures.
             </p>
 
             {/* 3 Prominent CTA Buttons */}
