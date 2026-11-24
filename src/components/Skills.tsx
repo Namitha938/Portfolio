@@ -5,13 +5,13 @@ import SectionHeading from './SectionHeading';
 import { skillsCategories } from '../data/portfolio';
 
 const categoryIcons: { [key: string]: any } = {
-  'Frontend': Layout,
-  'Backend': Server,
+  'Programming Languages': Code,
+  'Frontend Development': Layout,
+  'Backend Development': Server,
   'Databases': Database,
   'AI & Machine Learning': Brain,
-  'Generative AI': Cpu,
-  'Developer Tools': Wrench,
-  'Programming Languages': Code,
+  'Generative AI & LLM Frameworks': Cpu,
+  'Developer Tools & Cloud': Wrench,
 };
 
 export default function Skills() {

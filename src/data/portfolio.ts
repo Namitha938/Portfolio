@@ -69,6 +69,7 @@ export interface ExperienceItem {
   program?: string;
   dates: string;
   location: string;
+  type: 'Internship' | 'Industry Program';
   responsibilities: string[];
   achievement?: string;
   tech: string[];
@@ -108,15 +109,14 @@ export const personalInfo: PersonalInfo = {
   specialization:
     'Specializing in Generative AI, LLM & Multi-Agent Systems, Computer Vision, and Enterprise AI Delivery.',
   tagline:
-    'Building AI-powered applications, intelligent systems, and scalable web solutions.',
+    'Building high-performance Python backends, responsive React applications, and production-ready Generative AI systems.',
   introduction:
-    'I am a Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning, with hands-on experience in AI/ML and full-stack development. I work with Python, React, FastAPI, RAG systems, REST APIs, and modern AI frameworks to build scalable and intelligent software solutions. Passionate about engineering high-impact web and AI solutions for real-world enterprise applications.',
+    'I am a Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning, with hands-on experience in full-stack development and applied AI. I work with Python, React, FastAPI, RAG systems, REST APIs, and modern AI frameworks to engineer scalable software solutions.',
   careerInterests: [
-    'Software Developer',
-    'Full-Stack Developer',
     'AI Engineer',
-    'Generative AI Developer',
     'Python Developer',
+    'Full-Stack Developer',
+    'Software Developer',
   ],
   email: 'namithaaa444@gmail.com',
   location: 'Hyderabad, India',
@@ -130,18 +130,15 @@ export const personalInfo: PersonalInfo = {
 export const aboutContent = {
   heading: 'Engineering with Intelligence & Purpose',
   paragraphs: [
-    'I am a Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning, with a strong foundation in full-stack software development, REST API engineering, and intelligent application design.',
-    'I have hands-on experience building production-ready AI applications, multi-agent LLM pipelines, natural language processing tools, computer vision diagnostics, and responsive full-stack web applications.',
-    'My core technical strengths span Python, JavaScript, React.js, FastAPI, Django, LangGraph, PyTorch, RAG architectures, and cloud deployments on Azure and Hugging Face.',
-    'I am focused on writing clean, scalable, maintainable code and solving real-world challenges in collaborative, high-velocity engineering teams.',
-    'My immediate career goal is to excel as a Software Developer, Full-Stack Developer, or AI Engineer fresher, creating measurable technical impact.',
+    'I am a Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning at Swarna Bharathi Institute of Science and Technology, maintaining an 8.4/10 CGPA. My education pairs deep algorithmic and machine learning foundations with rigorous software engineering practices.',
+    'I build end-to-end software applications with Python, React.js, FastAPI, and Django, combining modern full-stack architectures with applied Generative AI, LangGraph multi-agent pipelines, RAG systems, and PyTorch deep learning models. My work emphasizes clean code, sub-2-second API latencies, and observability using LangSmith.',
+    'Actively seeking fresher roles as an AI Engineer, Python Developer, Full-Stack Developer, or Software Developer where I can contribute to high-velocity engineering teams building scalable, real-world systems.',
   ],
   careerInterests: [
-    'Software Developer',
-    'Full-Stack Developer',
     'AI Engineer',
-    'Generative AI Developer',
     'Python Developer',
+    'Full-Stack Developer',
+    'Software Developer',
   ],
   stats: [
     { value: 8.4, suffix: '/10', label: 'B.Tech CGPA' },
@@ -153,14 +150,19 @@ export const aboutContent = {
 
 export const skillsCategories: SkillCategory[] = [
   {
-    name: 'Frontend',
+    name: 'Programming Languages',
+    iconName: 'Code',
+    items: ['Python', 'JavaScript (ES6+)', 'SQL', 'Java', 'HTML5', 'CSS3'],
+  },
+  {
+    name: 'Frontend Development',
     iconName: 'Layout',
     items: ['React.js', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Responsive UI Design'],
   },
   {
-    name: 'Backend',
+    name: 'Backend Development',
     iconName: 'Server',
-    items: ['FastAPI', 'Django', 'Flask', 'REST API Development', 'Authentication & Routing'],
+    items: ['FastAPI', 'Django', 'Flask', 'REST API Architecture', 'Async Python', 'Routing & Auth'],
   },
   {
     name: 'Databases',
@@ -184,12 +186,12 @@ export const skillsCategories: SkillCategory[] = [
     ],
   },
   {
-    name: 'Generative AI',
+    name: 'Generative AI & LLM Frameworks',
     iconName: 'Cpu',
     items: [
-      'Large Language Models (LLMs)',
       'LangGraph Multi-Agent Systems',
       'LangChain',
+      'Large Language Models (LLMs)',
       'RAG Architectures',
       'FAISS Vector Search',
       'Sentence Transformers',
@@ -199,7 +201,7 @@ export const skillsCategories: SkillCategory[] = [
     ],
   },
   {
-    name: 'Developer Tools',
+    name: 'Developer Tools & Cloud',
     iconName: 'Wrench',
     items: [
       'Microsoft Azure',
@@ -212,11 +214,6 @@ export const skillsCategories: SkillCategory[] = [
       'VS Code',
     ],
   },
-  {
-    name: 'Programming Languages',
-    iconName: 'Code',
-    items: ['Python', 'JavaScript', 'SQL', 'Java', 'HTML', 'CSS'],
-  },
 ];
 
 export const experienceData: ExperienceItem[] = [
@@ -226,6 +223,7 @@ export const experienceData: ExperienceItem[] = [
     program: 'Pragati: Path to Future',
     dates: 'March 2026 – May 2026',
     location: 'Remote',
+    type: 'Internship',
     responsibilities: [
       'Evaluated Azure IaaS, PaaS, and SaaS infrastructure for AI/ML workloads across 10+ deployment environments.',
       'Benchmarked compute and storage configurations to optimize resource allocation and execution efficiency.',
@@ -240,6 +238,7 @@ export const experienceData: ExperienceItem[] = [
     company: 'Infosys Springboard',
     dates: 'February 2026 – April 2026',
     location: 'Remote',
+    type: 'Internship',
     responsibilities: [
       'Engineered an 8-step multi-agent pipeline using LangGraph and Groq AI with supervisor routing.',
       'Implemented stateful agent delegation, supervisor routing, and autonomous workflow orchestration.',
@@ -254,6 +253,7 @@ export const experienceData: ExperienceItem[] = [
     company: 'Internz Learn',
     dates: 'October 2025 – December 2025',
     location: 'Remote',
+    type: 'Internship',
     responsibilities: [
       'Built an AI resume screening application using Python, Groq AI, and LLaMA 3 for automated candidate evaluation.',
       'Developed NLP-based skill extraction and candidate ranking functionality with structured output schemas.',

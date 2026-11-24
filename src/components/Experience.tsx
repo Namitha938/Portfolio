@@ -38,6 +38,11 @@ export default function Experience() {
                     </div>
                   </div>
                   <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="rounded-full bg-primary/10 border border-primary/30 px-2.5 py-0.5 text-[10px] font-semibold text-primary uppercase tracking-wider">
+                        {exp.type}
+                      </span>
+                    </div>
                     <h3 className="font-display text-lg sm:text-xl font-bold text-foreground">
                       {exp.role}
                     </h3>

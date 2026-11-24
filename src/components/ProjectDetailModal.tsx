@@ -116,10 +116,10 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
             </div>
           </div>
 
-          {/* 3. Individual Contribution */}
+          {/* 3. My Contribution */}
           <div className="rounded-2xl border border-border bg-secondary/25 p-5">
             <h3 className="font-display text-sm font-semibold text-foreground flex items-center gap-2 mb-2">
-              <UserCheck className="size-4 text-primary" /> Individual Contribution
+              <UserCheck className="size-4 text-primary" /> My Contribution
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {details.myContribution}

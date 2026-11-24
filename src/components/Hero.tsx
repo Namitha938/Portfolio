@@ -49,7 +49,7 @@ export default function Hero() {
 
             {/* Professional Introduction */}
             <p className="max-w-xl text-sm sm:text-base text-foreground/85 leading-relaxed">
-              Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning. Building scalable web solutions, multi-agent LLM systems, and production AI applications with Python, React, and modern cloud architectures.
+              Computer Science graduate specializing in Artificial Intelligence and Machine Learning. Building high-performance Python backends, responsive React applications, and production-ready Generative AI systems.
             </p>
 
             {/* 3 Prominent CTA Buttons */}
