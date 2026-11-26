@@ -75,6 +75,10 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
               <img
                 src={project.image}
                 alt={`${project.title} preview`}
+                width={768}
+                height={480}
+                loading="lazy"
+                decoding="async"
                 className="size-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-transparent pointer-events-none" />

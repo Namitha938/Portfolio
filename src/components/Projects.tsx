@@ -14,7 +14,7 @@ export default function Projects() {
   );
 
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-5 py-24 scroll-mt-24">
+    <section className="mx-auto max-w-6xl px-5 py-24 scroll-mt-24">
       <Reveal>
         <SectionHeading
           eyebrow="Portfolio & Engineering Systems"

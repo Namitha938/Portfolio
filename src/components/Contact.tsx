@@ -92,7 +92,7 @@ export default function Contact({ onRequestResume }: ContactProps) {
   ];
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-5 py-24 scroll-mt-24">
+    <section className="mx-auto max-w-6xl px-5 py-24 scroll-mt-24">
       <Reveal>
         <div className="relative">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-28 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-brand opacity-20 blur-[80px]" />

@@ -19,13 +19,18 @@ export default function ParticleCanvas() {
     let animId = 0;
     let width = 0;
     let height = 0;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let bounds = canvas.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     const particles: Particle[] = [];
     const mouse = { x: -1000, y: -1000, radius: 150 };
+    let frameCount = 0;
+    let isVisible = true;
+    let isPageVisible = !document.hidden;
 
     const resize = () => {
       width = canvas.clientWidth;
       height = canvas.clientHeight;
+      bounds = canvas.getBoundingClientRect();
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -34,7 +39,7 @@ export default function ParticleCanvas() {
     const initParticles = () => {
       resize();
       particles.length = 0;
-      const count = Math.min(75, Math.round((width * height) / 20000));
+      const count = Math.min(48, Math.round((width * height) / 30000));
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * width,
@@ -46,9 +51,8 @@ export default function ParticleCanvas() {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
+      mouse.x = e.clientX - bounds.left;
+      mouse.y = e.clientY - bounds.top;
     };
 
     const handleMouseLeave = () => {
@@ -57,6 +61,12 @@ export default function ParticleCanvas() {
     };
 
     const draw = () => {
+      if (!isVisible || !isPageVisible) return;
+      // Keep the decorative effect smooth while using half the frame callbacks.
+      if (frameCount++ % 2 === 1) {
+        animId = requestAnimationFrame(draw);
+        return;
+      }
       ctx.clearRect(0, 0, width, height);
 
       // Move & wrap particles
@@ -69,8 +79,9 @@ export default function ParticleCanvas() {
         // Subtle mouse push
         const dx = p.x - mouse.x;
         const dy = p.y - mouse.y;
-        const dist = Math.hypot(dx, dy);
-        if (dist < mouse.radius && dist > 0) {
+        const distSquared = dx * dx + dy * dy;
+        if (distSquared < mouse.radius * mouse.radius && distSquared > 0) {
+          const dist = Math.sqrt(distSquared);
           const force = (1 - dist / mouse.radius) * 0.5;
           p.x += (dx / dist) * force;
           p.y += (dy / dist) * force;
@@ -82,8 +93,11 @@ export default function ParticleCanvas() {
         for (let j = i + 1; j < particles.length; j++) {
           const p1 = particles[i];
           const p2 = particles[j];
-          const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-          if (dist < 130) {
+          const dx = p1.x - p2.x;
+          const dy = p1.y - p2.y;
+          const distSquared = dx * dx + dy * dy;
+          if (distSquared < 16900) {
+            const dist = Math.sqrt(distSquared);
             ctx.strokeStyle = `rgba(139, 146, 255, ${0.22 * (1 - dist / 130)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
@@ -97,8 +111,11 @@ export default function ParticleCanvas() {
       // Draw lines to mouse cursor
       if (mouse.x > 0 && mouse.y > 0) {
         for (const p of particles) {
-          const dist = Math.hypot(p.x - mouse.x, p.y - mouse.y);
-          if (dist < mouse.radius) {
+          const dx = p.x - mouse.x;
+          const dy = p.y - mouse.y;
+          const distSquared = dx * dx + dy * dy;
+          if (distSquared < mouse.radius * mouse.radius) {
+            const dist = Math.sqrt(distSquared);
             ctx.strokeStyle = `rgba(168, 85, 247, ${0.4 * (1 - dist / mouse.radius)})`;
             ctx.lineWidth = 1.2;
             ctx.beginPath();
@@ -123,15 +140,30 @@ export default function ParticleCanvas() {
     initParticles();
     draw();
 
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting;
+      if (isVisible && isPageVisible) animId = requestAnimationFrame(draw);
+      else cancelAnimationFrame(animId);
+    });
+    visibilityObserver.observe(canvas);
+    const handleVisibilityChange = () => {
+      isPageVisible = !document.hidden;
+      if (isPageVisible && isVisible) animId = requestAnimationFrame(draw);
+      else cancelAnimationFrame(animId);
+    };
+
     window.addEventListener('resize', initParticles);
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseout', handleMouseLeave);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', initParticles);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseout', handleMouseLeave);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      visibilityObserver.disconnect();
     };
   }, []);
 

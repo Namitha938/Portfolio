@@ -6,7 +6,7 @@ import { aboutContent } from '../data/portfolio';
 
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-5 py-24 scroll-mt-24">
+    <section className="mx-auto max-w-6xl px-5 py-24 scroll-mt-24">
       <Reveal>
         <SectionHeading eyebrow="About Me" title={aboutContent.heading} />
       </Reveal>

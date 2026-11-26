@@ -5,7 +5,7 @@ import { educationData } from '../data/portfolio';
 
 export default function Education() {
   return (
-    <section id="education" className="mx-auto max-w-5xl px-5 py-24 scroll-mt-24">
+    <section className="mx-auto max-w-5xl px-5 py-24 scroll-mt-24">
       <Reveal>
         <SectionHeading eyebrow="Academic Background" title="Education" />
         <p className="mt-3 text-center text-sm text-muted-foreground max-w-xl mx-auto">

@@ -15,8 +15,9 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
           src={project.image}
           alt={`${project.title} screenshot`}
           loading="lazy"
-          width={1024}
-          height={640}
+          width={768}
+          height={480}
+          decoding="async"
           className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
         <span className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent pointer-events-none" />

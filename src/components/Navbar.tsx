@@ -12,23 +12,40 @@ export default function Navbar() {
 
   // Track active section on scroll
   useEffect(() => {
+    let frame = 0;
+    let currentSection = 'home';
+    let currentScrolled = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-      const scrollPos = window.scrollY + 160;
-
-      for (let i = navItems.length - 1; i >= 0; i--) {
-        const item = navItems[i];
-        const el = document.getElementById(item.id);
-        if (el && el.offsetTop <= scrollPos) {
-          setActiveSection(item.id);
-          break;
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const scrolled = window.scrollY > 20;
+        if (scrolled !== currentScrolled) {
+          currentScrolled = scrolled;
+          setIsScrolled(scrolled);
         }
-      }
+        const scrollPos = window.scrollY + 160;
+
+        for (let i = navItems.length - 1; i >= 0; i--) {
+          const item = navItems[i];
+          const el = document.getElementById(item.id);
+          if (el && el.offsetTop <= scrollPos) {
+            if (currentSection !== item.id) {
+              currentSection = item.id;
+              setActiveSection(item.id);
+            }
+            break;
+          }
+        }
+      });
     };
 
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   // Update sliding pill position whenever active section changes or window resizes

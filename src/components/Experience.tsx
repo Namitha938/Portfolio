@@ -5,7 +5,7 @@ import { experienceData } from '../data/portfolio';
 
 export default function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-5xl px-5 py-24 scroll-mt-24">
+    <section className="mx-auto max-w-5xl px-5 py-24 scroll-mt-24">
       <Reveal>
         <SectionHeading eyebrow="Experience" title="Professional Internships" />
         <p className="mt-3 text-center text-sm text-muted-foreground max-w-2xl mx-auto">

@@ -23,7 +23,7 @@ export default function Skills() {
       : skillsCategories.filter((cat) => cat.name === selectedCategory);
 
   return (
-    <section id="skills" className="relative mx-auto max-w-6xl px-5 py-24 scroll-mt-24">
+    <section className="relative mx-auto max-w-6xl px-5 py-24 scroll-mt-24">
       <Reveal>
         <SectionHeading eyebrow="Technical Skills" title="Core Engineering Toolkit" />
         <p className="mt-3 text-center text-sm text-muted-foreground max-w-2xl mx-auto">

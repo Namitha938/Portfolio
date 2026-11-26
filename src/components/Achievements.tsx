@@ -13,7 +13,7 @@ const categoryIcons: { [key: string]: typeof Trophy } = {
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="mx-auto max-w-6xl px-5 py-24 scroll-mt-24">
+    <section className="mx-auto max-w-6xl px-5 py-24 scroll-mt-24">
       <Reveal>
         <SectionHeading eyebrow="Milestones & Impact" title="Key Achievements" />
         <p className="mt-3 text-center text-sm text-muted-foreground max-w-2xl mx-auto">

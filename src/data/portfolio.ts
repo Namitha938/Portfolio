@@ -1,10 +1,10 @@
-import namithaImg from '../assets/namitha.jpg';
-import projCognitiveImg from '../assets/proj-cognitive.jpg';
-import projTruthlensImg from '../assets/proj-truthlens.jpg';
-import projResumeImg from '../assets/proj-resume.jpg';
-import projEmotionImg from '../assets/proj-emotion.jpg';
-import projCropguardImg from '../assets/proj-cropguard.jpg';
-import projLearningImg from '../assets/proj-learning.jpg';
+import namithaImg from '../assets/namitha.webp';
+import projCognitiveImg from '../assets/proj-cognitive.webp';
+import projTruthlensImg from '../assets/proj-truthlens.webp';
+import projResumeImg from '../assets/proj-resume.webp';
+import projEmotionImg from '../assets/proj-emotion.webp';
+import projCropguardImg from '../assets/proj-cropguard.webp';
+import projLearningImg from '../assets/proj-learning.webp';
 
 export interface PersonalInfo {
   name: string;

@@ -1,6 +1,7 @@
 import { ArrowRight, Download, Mail, Github, Linkedin, Sparkles } from 'lucide-react';
 import ParticleCanvas from './ParticleCanvas';
 import { personalInfo } from '../data/portfolio';
+import avatarMedium from '../assets/namitha-512.webp';
 
 export default function Hero() {
   const socialLinks = [
@@ -119,6 +120,10 @@ export default function Hero() {
                     width="384"
                     height="384"
                     loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    srcSet={`${avatarMedium} 512w, ${personalInfo.avatar} 768w`}
+                    sizes="(min-width: 1024px) 384px, (min-width: 640px) 320px, 256px"
                   />
                 </div>
               </div>

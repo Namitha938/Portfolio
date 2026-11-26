@@ -5,7 +5,7 @@ import { certificationsData } from '../data/portfolio';
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="mx-auto max-w-5xl px-5 py-24 scroll-mt-24">
+    <section className="mx-auto max-w-5xl px-5 py-24 scroll-mt-24">
       <Reveal>
         <SectionHeading eyebrow="Professional Credentials" title="Certifications" />
         <p className="mt-3 text-center text-sm text-muted-foreground max-w-xl mx-auto">
